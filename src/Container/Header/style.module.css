@@ -1,0 +1,57 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  height: 70px;
+  z-index: 10;
+  background-color: white;
+  font-size: 14px;
+}
+.logo img {
+  width: 60px;
+}
+.header__menu ul {
+  list-style: none;
+}
+.movie__item p {
+  font-size: 17px;
+}
+.header__menu ul li {
+  display: inline;
+  margin: 0 10px;
+}
+.header__menu ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+}
+.header__menu ul li a:hover {
+  color: red;
+  transition: 0.5 all;
+}
+.signin {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.signin i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.signin img {
+  height: auto;
+  width: 30px;
+  border-radius: 25px;
+  margin-right: 5px;
+}
+a {
+  text-decoration: none !important;
+}
