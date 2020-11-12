@@ -1,0 +1,17 @@
+.navCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.navCenter .active {
+  color: #fa5238 !important;
+  font-weight: 600;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.navCenter .inactive {
+  color: #000000;
+  font-weight: 600;
+  font-size: 24px;
+}
