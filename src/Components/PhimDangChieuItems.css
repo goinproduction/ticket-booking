@@ -1,0 +1,30 @@
+.hoverInfo {
+  position: relative;
+}
+.hoverInfo .btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  font-size: 25px;
+}
+.hoverInfo .btn :hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 25px;
+  visibility: visible;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  line-height: 25px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.2s all;
+  background-image: linear-gradient(to left, #fb4226, #ce3017 100%);
+  z-index: 1;
+}

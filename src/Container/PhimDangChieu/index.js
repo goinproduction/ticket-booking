@@ -6,27 +6,15 @@ import PhimDangChieuItems from "../../Components/PhimDangChieuItems";
 class PhimDangChieu extends Component {
   render() {
     const settings = {
-      className: "center",
-      centerMode: true,
+      dots: true,
       infinite: true,
-      centerPadding: "60px",
-      slidesToShow: 2,
       speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      initialSlide: 0,
       rows: 2,
-      slidesPerRow: 2,
     };
     return (
-      // <Slider {...settings}>
-      //   <div className="row">
-      //     {this.props.filmList.map((item, index) => {
-      //       return (
-      //         <div className="col-md-3" key={index}>
-      //           <PhimDangChieuItems item={item} />
-      //         </div>
-      //       );
-      //     })}
-      //   </div>
-      // </Slider>
       <Slider {...settings}>
         {this.props.filmList.map((item, index) => {
           return (
