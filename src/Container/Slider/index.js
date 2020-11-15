@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import { fetchFilms } from "../../Redux/Actions/film";
 import { connect } from "react-redux";
-import classes from "./style.module.css";
+import "./style.module.css";
 import slide01 from "../../Assets/img/slide01.jpg";
 import slide02 from "../../Assets/img/slide02.jpg";
 import slide03 from "../../Assets/img/slide03.png";
@@ -23,16 +23,16 @@ class Carousel extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <img src={slide01} style={{ width: "100%", height: "600px" }} />
+            <img src={slide01} style={{ width: "100%", height: 700 }} />
           </div>
           <div>
-            <img src={slide02} style={{ width: "100%", height: "600px" }} />
+            <img src={slide02} style={{ width: "100%", height: 700 }} />
           </div>
           <div>
-            <img src={slide03} style={{ width: "100%", height: "600px" }} />
+            <img src={slide03} style={{ width: "100%", height: 700 }} />
           </div>
           <div>
-            <img src={slide04} style={{ width: "100%", height: "600px" }} />
+            <img src={slide04} style={{ width: "100%", height: 700 }} />
           </div>
         </Slider>
       </div>
