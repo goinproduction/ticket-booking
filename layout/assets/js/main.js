@@ -1,6 +1,6 @@
 // SLICK
 $(document).ready(function () {
-  $(".carousel-slider").slick({
+  $(".carousel__slider").slick({
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,

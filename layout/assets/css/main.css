@@ -15,6 +15,8 @@
   position: absolute;
   left: 25px;
   top: 2px;
+  text-decoration: none;
+  color: transparent;
 }
 
 .header-logo__img {
@@ -116,72 +118,4 @@
 /* CAROUSEL */
 .carousel {
   position: relative;
-}
-
-/* SLICK */
-.slick-dots {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-left: 0;
-}
-
-.slick-dots li button {
-  background-color: #d8d8d8;
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  border-radius: 50%;
-  border: none;
-  color: transparent;
-  user-select: none;
-}
-
-.slick-dots li button:before {
-  content: "";
-}
-
-.slick-dots li.slick-active button {
-  background-color: #fb4226;
-}
-
-.slick-track {
-  display: flex;
-}
-
-.slick-slide {
-  height: auto;
-}
-
-.slick-arrow {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  width: 50px;
-  height: 100px;
-  z-index: 2;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-.slick-next {
-  background-image: url(/assets/img/next-session.png);
-  right: 12px;
-}
-
-.slick-next:before {
-  content: "";
-}
-
-.slick-prev {
-  background-image: url(/assets/img/back-session.png);
-  left: 15px;
-}
-
-.slick-prev:before {
-  content: "";
 }
