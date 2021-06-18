@@ -44,9 +44,9 @@
 .header-navbar__list-item-link {
   text-decoration: none;
   color: var(--black-color);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   transition: all 0.2s;
-  font-weight: 550;
+  font-weight: 500;
 }
 
 .header-navbar__list-item-link:hover {
@@ -90,7 +90,7 @@
 
 .header-login__text {
   margin-bottom: 0;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
 }
 
 .header-right__location {
@@ -111,11 +111,332 @@
 }
 
 .header-right__location-dropdown {
-  font-size: 1.4rem;
+  font-size: 1.4em;
   margin-top: 3px;
 }
 
 /* CAROUSEL */
 .carousel {
+  cursor: pointer;
+}
+
+.carousel__slider {
   position: relative;
+}
+
+.carousel__slider-image {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__trailer {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: 0 0;
+  border: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.carousel__slider:hover .carousel__trailer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.carousel__trailer:hover {
+  filter: brightness(0.8);
+  transition: all 0.2s;
+}
+
+.carousel__trailer-play {
+  height: 100%;
+  width: 100%;
+}
+
+/* FIRM SELECTION MENU */
+.firm-selection {
+  position: relative;
+}
+
+.firm-selection__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 940px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  z-index: 2;
+}
+
+.firm-selection__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.firm-selection__item p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+
+.firm-selection__menu-buy-ticket {
+  background-color: #4a4a4a;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 25px;
+  color: var(--white-color);
+  font-size: 1.4rem;
+}
+
+/* SHOWING MOVIE */
+.container {
+  max-width: 940px;
+}
+
+.movie {
+  padding: 75px 0 0;
+}
+
+.movie-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.movie-navbar li.movie-navbar--active a {
+  font-size: 2.6rem;
+  color: #f55238;
+  font-weight: 600;
+}
+
+.movie-navbar li {
+  list-style: none;
+}
+
+.movie-navbar__item-showing-movie a {
+  text-decoration: none;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--black-color);
+}
+
+.movie-navbar__item-upcoming-movie a {
+  text-decoration: none;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 2.2rem;
+  transition: all 0.2s;
+  color: var(--black-color);
+  font-weight: 600;
+}
+
+.movie-navbar__item-upcoming-movie a:hover {
+  font-size: 2.6rem;
+  transition: all 0.2s;
+  color: var(--black-color);
+}
+
+.showing-movie__slide {
+  width: 940px;
+}
+
+.showing-movie {
+  position: relative;
+}
+
+.showing-movie__item-image {
+  width: auto;
+  height: auto;
+}
+
+.showing-movie__slide {
+  padding: 0;
+  width: 25%;
+  display: inline-block;
+}
+
+.showing-movie__slide-item {
+  padding: 20px 10px 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.showing-movie__slide-item:hover .showHover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.showing-movie__slide-item:hover .showing-movie__slide-item-trailer {
+  display: block;
+}
+
+.showing-movie__slide-item .showHover {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.showing-movie__slide-item .filmThumbnail .hoverEffect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 0 0;
+  background: linear-gradient(to top, #000, transparent 100%);
+  top: 0;
+  border-radius: 4px;
+}
+
+.showing-movie__slide-item-detail {
+  text-decoration: none;
+}
+
+.filmThumbnail {
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 4px;
+  padding-top: 147.906977%;
+  background-position: center, 0 0;
+  background-size: 100% auto;
+  background-repeat: no-repeat, repeat-y;
+  background-image: url("/assets/img/film01.jpg");
+}
+.showing-movie__slide-item-trailer {
+  width: 60px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: 0 0;
+  border: none;
+  display: none;
+}
+
+.showing-movie__slide-item-trailer:hover {
+  filter: brightness(0.7);
+  transition: all 0.2s;
+}
+.showing-movie__slide-item-trailer-play {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+}
+.showing-movie__slide-item-rating {
+  font-size: 16px;
+  background-color: rgba(12, 27, 54, 0.8);
+  border: 1px solid #1f2e46;
+  border-radius: 4px;
+  padding: 2px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+  width: 54px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.showing-movie__slide-item-rating .showing-movie__slide-item-rating-text {
+  text-align: center;
+  transform: scaleY(1.2);
+  margin: 0;
+}
+.showing-movie__slide-item-rating-star {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.smallStar {
+  width: 8px;
+  height: 8px;
+}
+
+.half {
+  width: 8.08px;
+  height: 10px;
+  padding-bottom: 2px;
+}
+
+.showing-movie__slide-item-info {
+  position: relative;
+}
+
+.showing-movie__slide-item-info-name {
+  height: 42px;
+  max-height: 42px;
+  font-size: 16px;
+  color: #000;
+  line-height: 22px;
+  margin-bottom: 0;
+  overflow: hidden;
+  /* ... */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 600;
+}
+
+.age-type {
+  font-size: 14px;
+  background-color: #fb4226;
+  border-radius: 4px;
+  padding: 0 5px;
+  color: #fff;
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.age-type .age-type-general {
+  background-color: #00ac4d;
+}
+
+.showing-movie__slide-item-info-name-length {
+  font-size: 13px;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  margin-top: 8px;
+}
+
+.showing-movie .slick-prev {
+  left: -70px;
+}
+
+.showing-movie .slick-next {
+  right: -70px;
+}
+
+/* SPACER */
+.spacer {
+  padding-top: 120px;
+  background: url(/assets/img/spacer.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
