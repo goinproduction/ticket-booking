@@ -65,7 +65,67 @@
     </header>
 
     <section class="cineplex-detail">
+        <div class="container-fluid">
+            <div id="detailMainTop" class="backgroundMain">
+                <div class="styleBlur">
+                    <div ng-if="avg_point > 0" class="ng-scope">
+                        <span ng-if="avg_point !== 0" class="avgPoint ng-scope">
+                            <span class="pointstar ng-binding">8</span>
+                            <p ng-bind-html="setStar(avg_point)" class="ng-binding"><img class="smallStar"
+                                    src="./assets/img/star1.png"><img class="smallStar"
+                                    src="./assets/img/star1.png"><img class="smallStar"
+                                    src="./assets/img/star1.png"><img class="smallStar" src="./assets/img/star1.png">
+                            </p>
+                        </span>
+                        <div id="starMainMobile" class="row star" style="margin-top: 10px">
+                        </div>
+                    </div>
+                    <img src="https://s3img.vcdn.vn/123phim/2021/01/bhd-star-bitexco-16105952178872.png"
+                        class="posterLandscapeFilm">
+                </div>
+                <div class="styleGradient"></div>
 
+                <div class="detailMainInfo mainMaxWidth2">
+                    <div class="col-sm-3 col-xs-4 filmPosterTop">
+                        <div class="row posterMain">
+                            <img src="https://s3img.vcdn.vn/123phim/2021/01/bhd-star-bitexco-16105952220224.png"
+                                alt="Loading...">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 infoMain">
+                        <div class="parentInfo2">
+                            <span class="detailMainInfo2 ng-binding">BHD Star Bitexco</span><br>
+                        </div>
+                        <div>
+                            <span class="detailMainInfo1 ng-binding">L3-Bitexco Icon 68, 2 Hải Triều, Q.1</span><br>
+                        </div>
+                        <button class="btnBuyTicketDetail" ng-click="buyTicket()"> Mua vé</button>
+                    </div>
+
+                    <div class="col-sm-2 circleStar ng-scope" ng-if="avg_point > 0">
+                        <div class="circleSum">
+                        </div>
+                        <div id="circlePercent" class="c100 p80">
+                            <div class="circleBorder">
+                            </div>
+                            <span class="ng-binding">8</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div id="starMain" class="row star ng-binding" style="margin-top: 10px"
+                            ng-bind-html="setStar(avg_point)"><img class="smallStar" src="./assets/img/star1.png"><img
+                                class="smallStar" src="./assets/img/star1.png"><img class="smallStar"
+                                src="./assets/img/star1.png"><img class="smallStar" src="./assets/img/star1.png"></div>
+                        <div class="row" style="margin-top: 10px">
+                            <span class="detailMainInfo1 ng-binding" style="margin: auto">198 người đánh giá</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">

@@ -1848,6 +1848,10 @@
   padding-bottom: 2px;
 }
 
+.smallStar {
+  width: 8px;
+  height: 8px;
+}
 .showing-movie__slide-item-info {
   position: relative;
 }
@@ -2038,6 +2042,91 @@
 /* CINEPLEX DETAIL */
 .cineplex-detail__top {
   position: relative;
+}
+
+#detailMainTop{
+  position: relative;
+}
+
+#detailMainTop .styleBlur .posterLandscapeFilm {
+  filter: blur(15px);
+  margin: -11px 0 -5px -10px;
+  width: calc(100% + 5px);
+}
+
+.backgroundMain{
+  background-color: #fff;
+}
+
+.styleBlur{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.pointstar{
+
+}
+
+.avgPoint{
+
+}
+
+.smallStar{
+
+}
+
+#starMainMobile{
+
+}
+
+.star{
+
+}
+
+.posterLandscapeFilm{
+
+}
+
+.styleGradient{
+
+}
+
+.detailMainInfo{
+
+}
+
+.mainMaxWidth2{
+
+}
+
+.filmPosterTop{
+
+}
+
+.posterMain{
+
+}
+
+.infoMain{
+
+}
+
+.parentInfo2{
+
+}
+
+.detailMainInfo2{
+
+}
+
+.detailMainInfo1{
+
+}
+
+.btnBuyTicketDetail{
+
 }
 
 /* NEWS */
