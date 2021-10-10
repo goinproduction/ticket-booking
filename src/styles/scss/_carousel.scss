@@ -1,0 +1,41 @@
+.carousel {
+    cursor: pointer;
+}
+
+.carousel__slider {
+    position: relative;
+}
+
+.carousel__slider-image {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel__trailer {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: 0 0;
+    border: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+// .carousel__slider:hover .carousel__trailer {
+//     visibility: visible;
+//     opacity: 1;
+// }
+
+// .carousel__trailer:hover {
+//     filter: brightness(0.8);
+// }
+
+// .carousel__trailer-play {
+//     height: 100%;
+//     width: 100%;
+// }
