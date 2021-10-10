@@ -4,6 +4,11 @@
 
 .carousel__slider {
     position: relative;
+
+    &:hover .carousel__trailer {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .carousel__slider-image {
@@ -24,18 +29,13 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.2s;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
 }
 
-// .carousel__slider:hover .carousel__trailer {
-//     visibility: visible;
-//     opacity: 1;
-// }
-
-// .carousel__trailer:hover {
-//     filter: brightness(0.8);
-// }
-
-// .carousel__trailer-play {
-//     height: 100%;
-//     width: 100%;
-// }
+.carousel__trailer-play {
+    height: 100%;
+    width: 100%;
+}

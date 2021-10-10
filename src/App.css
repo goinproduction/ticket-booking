@@ -101,6 +101,9 @@
 
 .carousel__slider {
   position: relative; }
+  .carousel__slider:hover .carousel__trailer {
+    visibility: visible;
+    opacity: 1; }
 
 .carousel__slider-image {
   width: 100%;
@@ -119,6 +122,12 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.2s; }
+  .carousel__trailer:hover {
+    filter: brightness(0.8); }
+
+.carousel__trailer-play {
+  height: 100%;
+  width: 100%; }
 
 * {
   box-sizing: inherit; }
