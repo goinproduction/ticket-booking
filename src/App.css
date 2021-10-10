@@ -129,6 +129,48 @@
   height: 100%;
   width: 100%; }
 
+.film-selection {
+  position: relative; }
+
+.film-selection__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 940px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2; }
+
+.film-selection__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer; }
+
+.film-selection__item p {
+  margin-bottom: 0;
+  font-size: 1.4rem; }
+
+.film-selection__menu-buy-ticket {
+  background-color: #fb4226;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: 0.2 all; }
+  .film-selection__menu-buy-ticket:hover {
+    background-color: #b42a14; }
+
 * {
   box-sizing: inherit; }
 
