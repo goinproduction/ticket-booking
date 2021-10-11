@@ -84,7 +84,7 @@ const Carousel = () => {
                     />
                 </button>
             </div>
-            {isOpen == true ? (
+            {isOpen === true ? (
                 <TrailerModal
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}

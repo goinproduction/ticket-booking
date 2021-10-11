@@ -1,16 +1,16 @@
-import React from 'react';
-import logo from '../assets/img/web-logo.png'
-import avt from '../assets/img/avatar.png'
+import React, { useState } from 'react';
+import logo from '../assets/img/web-logo.png';
+import avt from '../assets/img/avatar.png';
+import DropdownProvince from './DropdownProvince';
 
 const Navbar = () => {
+    const [location, setLocation] = useState('Hồ Chí Minh');
+    const [showSelection, setShowSelection] = useState(false);
+
     return (
         <header className='header'>
             <a href='/' className='header-logo'>
-                <img
-                    src={logo}
-                    alt='logo'
-                    className='header-logo__img'
-                />
+                <img src={logo} alt='logo' className='header-logo__img' />
             </a>
             <div className='header-navbar'>
                 <ul className='header-navbar__list'>
@@ -44,17 +44,22 @@ const Navbar = () => {
             </div>
             <div className='header-right'>
                 <div className='header-right__login-wrap'>
-                    <img
-                        src={avt}
-                        alt='avatar'
-                        className='header-login__img'
-                    />
+                    <img src={avt} alt='avatar' className='header-login__img' />
                     <p className='header-login__text'>Đăng Nhập</p>
                 </div>
-                <div className='header-right__location'>
+                <div
+                    className='header-right__location'
+                    onClick={() => setShowSelection(!showSelection)}
+                >
                     <i className='header-right__location-icon fas fa-map-marker-alt' />
-                    <p className='header-right__location-text'>Hồ Chí Minh</p>
-                    <i className='header-right__location-dropdown fa fa-chevron-down' />
+                    <p className='header-right__location-text'>{location}</p>
+                    <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
+                    {showSelection === true ? (
+                        <DropdownProvince
+                            setLocation={setLocation}
+                            setShowSelection={setShowSelection}
+                        />
+                    ) : null}
                 </div>
             </div>
         </header>
