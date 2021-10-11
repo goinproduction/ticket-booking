@@ -5,6 +5,7 @@ import slide3 from '../assets/img/slide04.png';
 import slide4 from '../assets/img/slide06.png';
 import slide5 from '../assets/img/slide07.png';
 import play from '../assets/img/play-video.png';
+import Slider from 'react-slick';
 
 const Carousel = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +15,20 @@ const Carousel = () => {
         setIsOpen(true);
         setVideoId(currentVideoId);
     };
+
+    var settings = {
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dotsClass: 'slick-dots slick-thumb',
+        arrows: true,
+        dots: true,
+    };
+
     return (
-        <section className='carousel'>
+        <Slider {...settings}>
             <div className='carousel__slider'>
                 <img
                     src={slide2}
@@ -91,7 +104,7 @@ const Carousel = () => {
                     videoId={videoId}
                 />
             ) : null}
-        </section>
+        </Slider>
     );
 };
 
