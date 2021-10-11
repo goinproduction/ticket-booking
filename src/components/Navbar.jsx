@@ -6,7 +6,6 @@ import DropdownProvince from './DropdownProvince';
 const Navbar = () => {
     const [location, setLocation] = useState('Hồ Chí Minh');
     const [showSelection, setShowSelection] = useState(false);
-
     return (
         <header className='header'>
             <a href='/' className='header-logo'>
