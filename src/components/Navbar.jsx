@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import logo from '../assets/img/web-logo.png';
 import avt from '../assets/img/avatar.png';
 import DropdownProvince from './DropdownProvince';
+import { useHistory } from 'react-router-dom';
 
 const Navbar = () => {
     const [location, setLocation] = useState('Hồ Chí Minh');
     const [showSelection, setShowSelection] = useState(false);
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/login');
+    };
     return (
         <header className='header'>
             <a href='/' className='header-logo'>
@@ -42,7 +48,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className='header-right'>
-                <div className='header-right__login-wrap'>
+                <div
+                    className='header-right__login-wrap'
+                    onClick={handleClick.bind(this)}
+                >
                     <img src={avt} alt='avatar' className='header-login__img' />
                     <p className='header-login__text'>Đăng Nhập</p>
                 </div>

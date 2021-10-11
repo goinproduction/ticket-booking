@@ -1,10 +1,19 @@
 import React from 'react';
 import HeaderLogo from '../assets/img/signin-header.png';
-import FacebookLogo from '../assets/img/facebook-icon.png';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+    const history = useHistory();
+
+    const handleClose = () => {
+        history.push('/');
+    };
+
+    const handleClick = () => {
+        history.push('/register');
+    };
     return (
         <div className='signin signin-vertical'>
             <div className='signin-wrapper'>
@@ -42,12 +51,15 @@ const Login = () => {
                         />
                         <p className='signin-remember_text'>Ghi nhớ tôi</p>
                     </span>
-                    <p className='signin-remember_text'>Bạn cần trợ giúp</p>
+                    <p className='signin-remember_text'>Bạn cần trợ giúp?</p>
                 </div>
                 <div className='has-no-account'>
                     <p className='has-no-account_text'>
                         Bạn chưa có tài khoản?
-                        <a className='has-no-account_text--link'>
+                        <a
+                            className='has-no-account_text--link'
+                            onClick={handleClick.bind(this)}
+                        >
                             Đăng ký ngay
                         </a>
                     </p>
@@ -59,7 +71,10 @@ const Login = () => {
                         <a className='recaptcha-text--link'>Tìm hiểu thêm</a>
                     </p>
                 </div>
-                <div className='signin-close'></div>
+                <div
+                    className='signin-close'
+                    onClick={handleClose.bind(this)}
+                ></div>
             </div>
         </div>
     );
