@@ -33,16 +33,16 @@ const Carousel = () => {
                     />
                 </button>
             </div>
-            <div
-                className='carousel__slider'
-                onClick={handleClick.bind(this, 'kBY2k3G6LsM')}
-            >
+            <div className='carousel__slider'>
                 <img
                     src={slide3}
                     className='carousel__slider-image'
                     alt='slide'
                 />
-                <button className='carousel__trailer'>
+                <button
+                    className='carousel__trailer'
+                    onClick={handleClick.bind(this, 'kBY2k3G6LsM')}
+                >
                     <img
                         src={play}
                         alt='play'
@@ -50,16 +50,16 @@ const Carousel = () => {
                     />
                 </button>
             </div>
-            <div
-                className='carousel__slider'
-                onClick={handleClick.bind(this, 'Eyju5ODfd-g')}
-            >
+            <div className='carousel__slider'>
                 <img
                     src={slide4}
                     className='carousel__slider-image'
                     alt='slide'
                 />
-                <button className='carousel__trailer'>
+                <button
+                    className='carousel__trailer'
+                    onClick={handleClick.bind(this, 'Eyju5ODfd-g')}
+                >
                     <img
                         src={play}
                         alt='play'
@@ -67,16 +67,16 @@ const Carousel = () => {
                     />
                 </button>
             </div>
-            <div
-                className='carousel__slider'
-                onClick={handleClick.bind(this, 'nh0BklwPN9Q')}
-            >
+            <div className='carousel__slider'>
                 <img
                     src={slide5}
                     className='carousel__slider-image'
                     alt='slide'
                 />
-                <button className='carousel__trailer'>
+                <button
+                    className='carousel__trailer'
+                    onClick={handleClick.bind(this, 'nh0BklwPN9Q')}
+                >
                     <img
                         src={play}
                         alt='play'
