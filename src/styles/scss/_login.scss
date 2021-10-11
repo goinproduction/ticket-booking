@@ -1,0 +1,146 @@
+.signin {
+    margin: 0 auto;
+    float: left;
+    padding: 0 calc(50% - 430px);
+    box-sizing: border-box;
+}
+
+.signin-vertical {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./assets/img/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .signin-wrapper {
+        max-width: 360px;
+        padding: 40px 32px 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(
+            to bottom,
+            rgba(20, 50, 93, 0.9),
+            rgba(8, 22, 48, 0.9)
+        );
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45);
+        text-align: center;
+        color: #fff;
+        border-radius: 6px;
+
+        .signin-header {
+            width: 209px;
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+
+        .sigin-input {
+            min-height: 37px;
+            min-width: 270px;
+            font-size: 1.5rem;
+        }
+
+        .signin-button {
+            width: 296px;
+            height: 42px;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .signin-remember {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            .signin-remember_checkbox {
+                display: flex;
+                align-items: center;
+
+                .signin-remember_checkbox-icon {
+                    margin-right: 5px;
+                }
+            }
+            .signin-remember_text {
+                font-size: 1.4rem;
+                margin: 0;
+            }
+        }
+
+        .has-no-account {
+            margin-top: 10px;
+            display: block;
+
+            .has-no-account_text {
+                font-size: 1.6rem;
+                text-align: left;
+
+                .has-no-account_text--link {
+                    text-decoration: none;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .recaptcha {
+            margin-top: 10px;
+            display: block;
+
+            .recaptcha-text {
+                font-size: 1.4rem;
+                text-align: left;
+                color: gray;
+                .recaptcha-text--link {
+                    text-decoration: none;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .signin-close {
+            opacity: 1;
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #081630;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+            content: '';
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                display: block;
+                border-left: 2px solid #455570;
+                width: 2px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                border-left: 2px solid #455570;
+                width: 2px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}
