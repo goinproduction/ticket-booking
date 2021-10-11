@@ -46,7 +46,7 @@ const Login = () => {
                     <span className='signin-remember_checkbox'>
                         <input
                             type='checkbox'
-                            checked
+                            defaultChecked
                             className='signin-remember_checkbox-icon'
                         />
                         <p className='signin-remember_text'>Ghi nhớ tôi</p>
