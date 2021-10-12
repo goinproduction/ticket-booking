@@ -38,112 +38,115 @@ const FilmThumbnail = ({ films }) => {
     };
 
     return (
-        <div className='movie'>
-            <ul className='movie-navbar'>
-                <li className='movie-navbar__item-showing-movie movie-navbar--active'>
-                    <a href='#' className>
-                        Đang Chiếu
-                    </a>
-                </li>
-                <li className='movie-navbar__item-upcoming-movie'>
-                    <a href='#' className>
-                        Sắp Chiếu
-                    </a>
-                </li>
-            </ul>
+        <>
+            <div className='movie'>
+                <ul className='movie-navbar'>
+                    <li className='movie-navbar__item-showing-movie movie-navbar--active'>
+                        <a href='#' className>
+                            Đang Chiếu
+                        </a>
+                    </li>
+                    <li className='movie-navbar__item-upcoming-movie'>
+                        <a href='#' className>
+                            Sắp Chiếu
+                        </a>
+                    </li>
+                </ul>
 
-            <div className='showing-movie'>
-                <Slider {...settings}>
-                    {films.map((film) => {
-                        // Xu li ngay thang
-                        var openingDate = new Date(
-                            film.ngayKhoiChieu
-                        ).toLocaleDateString('vi-VN');
-                        var trailer = film.trailer;
+                <div className='showing-movie'>
+                    <Slider {...settings}>
+                        {films.map((film) => {
+                            // Xu li ngay thang
+                            var openingDate = new Date(
+                                film.ngayKhoiChieu
+                            ).toLocaleDateString('vi-VN');
+                            var trailer = film.trailer;
 
-                        return (
-                            <div
-                                className='showing-movie__slide'
-                                key={film.maPhim}
-                            >
-                                <div className='showing-movie__slide-item'>
-                                    <a className='showing-movie__slide-item-detail'>
-                                        <div className='filmThumbnail'>
-                                            <img
-                                                src={film.hinhAnh}
-                                                alt={`${film.biDanh}`}
-                                                className='filmThumbnail-poster'
-                                            />
-                                            <div className='hoverEffect showHover' />
-                                            <button
-                                                className='showing-movie__slide-item-trailer'
-                                                onClick={handleClick.bind(
-                                                    this,
-                                                    trailer
-                                                )}
-                                            >
+                            return (
+                                <div
+                                    className='showing-movie__slide'
+                                    key={film.maPhim}
+                                >
+                                    <div className='showing-movie__slide-item'>
+                                        <a className='showing-movie__slide-item-detail'>
+                                            <div className='filmThumbnail'>
                                                 <img
-                                                    src={playBtn}
-                                                    alt='trailer'
-                                                    className='showing-movie__slide-item-trailer-play'
+                                                    src={film.hinhAnh}
+                                                    alt={`${film.biDanh}`}
+                                                    className='filmThumbnail-poster'
                                                 />
-                                            </button>
-                                            <span className='showing-movie__slide-item-rating'>
-                                                <p className='showing-movie__slide-item-rating-text'>
-                                                    {film.danhGia}
-                                                </p>
-                                                <p className='showing-movie__slide-item-rating-star'>
+                                                <div className='hoverEffect showHover' />
+                                                <button
+                                                    className='showing-movie__slide-item-trailer'
+                                                    onClick={handleClick.bind(
+                                                        this,
+                                                        trailer
+                                                    )}
+                                                >
                                                     <img
-                                                        src={smallStar}
-                                                        alt='star'
-                                                        className='smallStar'
+                                                        src={playBtn}
+                                                        alt='trailer'
+                                                        className='showing-movie__slide-item-trailer-play'
                                                     />
-                                                    <img
-                                                        src={smallStar}
-                                                        alt='star'
-                                                        className='smallStar'
-                                                    />
-                                                    <img
-                                                        src={smallStar}
-                                                        alt='star'
-                                                        className='smallStar'
-                                                    />
-                                                    <img
-                                                        src={halfStar}
-                                                        alt='half-star'
-                                                        className='half'
-                                                    />
-                                                </p>
-                                            </span>
+                                                </button>
+                                                <span className='showing-movie__slide-item-rating'>
+                                                    <p className='showing-movie__slide-item-rating-text'>
+                                                        {film.danhGia}
+                                                    </p>
+                                                    <p className='showing-movie__slide-item-rating-star'>
+                                                        <img
+                                                            src={smallStar}
+                                                            alt='star'
+                                                            className='smallStar'
+                                                        />
+                                                        <img
+                                                            src={smallStar}
+                                                            alt='star'
+                                                            className='smallStar'
+                                                        />
+                                                        <img
+                                                            src={smallStar}
+                                                            alt='star'
+                                                            className='smallStar'
+                                                        />
+                                                        <img
+                                                            src={halfStar}
+                                                            alt='half-star'
+                                                            className='half'
+                                                        />
+                                                    </p>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div className='showing-movie__slide-item-info'>
+                                            <div className='showing-movie__slide-item-info-name'>
+                                                <span className='age-type age-type-general'>
+                                                    P
+                                                </span>
+                                                {film.tenPhim}
+                                            </div>
+                                            <div className='showing-movie__slide-item-info-name-length'>
+                                                {openingDate} - {film.maNhom}
+                                            </div>
                                         </div>
-                                    </a>
-                                    <div className='showing-movie__slide-item-info'>
-                                        <div className='showing-movie__slide-item-info-name'>
-                                            <span className='age-type age-type-general'>
-                                                P
-                                            </span>
-                                            {film.tenPhim}
-                                        </div>
-                                        <div className='showing-movie__slide-item-info-name-length'>
-                                            {openingDate} - {film.maNhom}
-                                        </div>
+                                        <div className='showHover' />
                                     </div>
-                                    <div className='showHover' />
                                 </div>
-                            </div>
-                        );
-                    })}
-                </Slider>
+                            );
+                        })}
+                    </Slider>
 
-                {show === true ? (
-                    <TrailerModal
-                        isOpen={show}
-                        setIsOpen={setShow}
-                        videoId={videoId}
-                    />
-                ) : null}
+                    {show === true ? (
+                        <TrailerModal
+                            isOpen={show}
+                            setIsOpen={setShow}
+                            videoId={videoId}
+                        />
+                    ) : null}
+                </div>
             </div>
-        </div>
+            <div className='spacer'></div>
+        </>
     );
 };
 

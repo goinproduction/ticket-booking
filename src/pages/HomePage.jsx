@@ -7,6 +7,8 @@ import NavbarContainer from '../containers/NavbarContainer';
 import { getFilms } from '../store/actions/filmAction';
 import { connect } from 'react-redux';
 import FilmthumbNailContainer from '../containers/FilmThumbnailContainer';
+import News from '../components/News';
+import AppBanner from '../components/AppBanner';
 
 const HomePage = ({ getFilms }) => {
     useEffect(() => {
@@ -21,7 +23,9 @@ const HomePage = ({ getFilms }) => {
             <div className='container'>
                 <FilmSelectionContainer />
                 <FilmthumbNailContainer />
+                <News />
             </div>
+            <AppBanner />
         </>
     );
 };
