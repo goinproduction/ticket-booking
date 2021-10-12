@@ -173,10 +173,22 @@
   width: 100%; }
 
 .modal-video-close-btn {
-  right: -12px !important;
-  top: -10px !important;
-  width: 26px !important;
-  height: 26px !important; }
+  right: -18px !important;
+  top: -21px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid white;
+  border-radius: 50%; }
+  .modal-video-close-btn::before {
+    width: 20px !important;
+    height: 4px !important;
+    margin-top: -1px !important;
+    left: 9px !important; }
+  .modal-video-close-btn::after {
+    width: 20px !important;
+    height: 4px !important;
+    margin-top: -1px !important;
+    left: 9px !important; }
 
 .film-selection {
   position: relative; }
