@@ -9,8 +9,13 @@ import news7 from '../assets/img/news7.jpg';
 import news8 from '../assets/img/news8.jpg';
 import like from '../assets/img/like.png';
 import comment from '../assets/img/comment.png';
+import { useHistory } from 'react-router';
 
 const News = () => {
+    const history = useHistory();
+    const handleRedirect = () => {
+        history.push('/news-detail');
+    };
     return (
         <section className='news'>
             <ul className='news-navbar'>
@@ -32,7 +37,10 @@ const News = () => {
             </ul>
             <div className='news-content'>
                 <div className='row'>
-                    <div className='col-sm-6'>
+                    <div
+                        className='col-sm-6'
+                        onClick={handleRedirect.bind(this)}
+                    >
                         <div className='news-content__left'>
                             <div className='news-content__left-img'>
                                 <img src={latmat} alt='latmat' />

@@ -36,14 +36,14 @@ const Footer = () => {
                         <div className='row'>
                             <div className='col-sm-6'>
                                 <div className='footer__content-about-left'>
-                                    <a href>FAQ</a>
-                                    <a href>Brand Guidelines</a>
+                                    <a>FAQ</a>
+                                    <a>Brand Guidelines</a>
                                 </div>
                             </div>
                             <div className='col-sm-6'>
                                 <div className='footer__content-about-right'>
-                                    <a href>Thoả thuận sử dụng</a>
-                                    <a href>Chính sách bảo mật</a>
+                                    <a>Thoả thuận sử dụng</a>
+                                    <a>Chính sách bảo mật</a>
                                 </div>
                             </div>
                         </div>

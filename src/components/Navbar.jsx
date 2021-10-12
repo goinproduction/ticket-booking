@@ -8,13 +8,12 @@ const Navbar = () => {
     const [location, setLocation] = useState('Hồ Chí Minh');
     const [showSelection, setShowSelection] = useState(false);
     const history = useHistory();
-
     const handleClick = () => {
         history.push('/login');
     };
     return (
         <header className='header'>
-            <a href='/' className='header-logo'>
+            <a className='header-logo' onClick={() => history.push('/')}>
                 <img src={logo} alt='logo' className='header-logo__img' />
             </a>
             <div className='header-navbar'>
