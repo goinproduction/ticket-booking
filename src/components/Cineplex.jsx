@@ -1,14 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getCineplexs } from '../store/actions/cineplexAction';
+import { getCineplexs, getCineplexById } from '../store/actions/cineplexAction';
 
-const Cineplex = ({ cineplexs, getCineplexs }) => {
-    const [active, setActive] = useState('');
+const Cineplex = ({
+    cineplexs,
+    cineplexById,
+    getCineplexs,
+    getCineplexById,
+}) => {
+    const [cineplexId, setCineplexId] = useState('BHDStar');
+    const [groupId, setGroupId] = useState('');
 
     useEffect(() => {
         getCineplexs();
     }, []);
 
+    useEffect(() => {
+        getCineplexById(cineplexId);
+        handleDefaultCineplexAddress();
+    }, [cineplexId]);
+
+    const handleDefaultCineplexAddress = () => {
+        console.log('hi');
+        if (cineplexId === 'BHDStar') {
+            setGroupId('bhd-star-cineplex-3-2');
+        } else if (cineplexId === 'CGV') {
+            setGroupId('cgv-aeon-binh-tan');
+        } else if (cineplexId === 'CGV') {
+            setGroupId('cgv-aeon-binh-tan');
+        } else if (cineplexId === 'CineStar') {
+            setGroupId('cns-hai-ba-trung');
+        } else if (cineplexId === 'Galaxy') {
+            setGroupId('glx-huynh-tan-phat');
+        } else if (cineplexId === 'LotteCinima') {
+            setGroupId('lotte-cantavil');
+        } else if (cineplexId === 'MegaGS') {
+            setGroupId('megags-cao-thang');
+        }
+    };
     return (
         <>
             <div className='cinema' id='cineplex'>
@@ -19,7 +48,14 @@ const Cineplex = ({ cineplexs, getCineplexs }) => {
                                 {cineplexs.map((cineplex, index) => (
                                     <li
                                         key={index}
-                                        className='cinema__brand-logo-list-item'
+                                        className={
+                                            cineplexId === cineplex.maHeThongRap
+                                                ? 'cinema__brand-logo-list-item cinema__brand-logo-list-item--active'
+                                                : 'cinema__brand-logo-list-item'
+                                        }
+                                        onClick={() =>
+                                            setCineplexId(cineplex.maHeThongRap)
+                                        }
                                     >
                                         <a>
                                             <img
@@ -33,64 +69,34 @@ const Cineplex = ({ cineplexs, getCineplexs }) => {
                             </ul>
                         </div>
                     </div>
-                    <div className='col-sm-4 line'>
-                        <div className='cinema__brand-location cinema__brand-location--active'>
-                            <div className='cinema__brand-location-img'>
-                                <img src='./assets/img/brand-img.png' alt />
-                            </div>
-                            <div className='cinema__brand-location-info'>
-                                <p className='cinema__brand-location-info-name'>
-                                    <span className='cinema__brand-location-info-name-style'>
-                                        BHD Star
-                                    </span>
-                                    - Bitexco
-                                </p>
-                                <p className='cinema__brand-location-info-address'>
-                                    L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                </p>
-                                <a className='cinema__brand-location-info-detail'>
-                                    [chi tiết]
-                                </a>
-                            </div>
-                        </div>
-                        <div className='cinema__brand-location'>
-                            <div className='cinema__brand-location-img'>
-                                <img src='./assets/img/brand-img.png' alt />
-                            </div>
-                            <div className='cinema__brand-location-info'>
-                                <p className='cinema__brand-location-info-name'>
-                                    <span className='cinema__brand-location-info-name-style'>
-                                        BHD Star
-                                    </span>
-                                    - Bitexco
-                                </p>
-                                <p className='cinema__brand-location-info-address'>
-                                    L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                </p>
-                                <a className='cinema__brand-location-info-detail'>
-                                    [chi tiết]
-                                </a>
-                            </div>
-                        </div>
-                        <div className='cinema__brand-location'>
-                            <div className='cinema__brand-location-img'>
-                                <img src='./assets/img/brand-img.png' alt />
-                            </div>
-                            <div className='cinema__brand-location-info'>
-                                <p className='cinema__brand-location-info-name'>
-                                    <span className='cinema__brand-location-info-name-style'>
-                                        BHD Star
-                                    </span>
-                                    - Bitexco
-                                </p>
-                                <p className='cinema__brand-location-info-address'>
-                                    L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                </p>
-                                <a className='cinema__brand-location-info-detail'>
-                                    [chi tiết]
-                                </a>
-                            </div>
-                        </div>
+                    <div
+                        className='col-sm-4 line scrollBar'
+                        id='custom-scrollbar'
+                    >
+                        {cineplexById.map((cineById, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    onClick={() =>
+                                        setGroupId(cineById.maCumRap)
+                                    }
+                                    className={
+                                        groupId === cineById.maCumRap
+                                            ? 'cinema__brand-location cinema__brand-location--active'
+                                            : 'cinema__brand-location'
+                                    }
+                                >
+                                    <div className='cinema__brand-location-info'>
+                                        <p className='cinema__brand-location-info-name'>
+                                            {cineById.tenCumRap}
+                                        </p>
+                                        <p className='cinema__brand-location-info-address'>
+                                            {cineById.diaChi}
+                                        </p>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                     <div className='col-sm-7 line'>
                         <div className='cinema__showingtime'>
@@ -110,6 +116,9 @@ const Cineplex = ({ cineplexs, getCineplexs }) => {
 
 const mapStateToProps = (state) => ({
     cineplexs: state.cineplex.cineplexs,
+    cineplexById: state.cineplex.cineplexById,
 });
 
-export default connect(mapStateToProps, { getCineplexs })(Cineplex);
+export default connect(mapStateToProps, { getCineplexs, getCineplexById })(
+    Cineplex
+);

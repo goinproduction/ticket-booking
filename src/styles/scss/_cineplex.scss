@@ -1,4 +1,12 @@
 @import './variables';
+.cinema {
+    display: block;
+}
+.scrollBar {
+    max-height: 470px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 .line {
     border: 1px solid #ececec;
@@ -26,6 +34,7 @@
     padding: 14px;
     opacity: 0.5;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .cinema__brand-logo-list-item--active {
