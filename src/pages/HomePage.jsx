@@ -10,6 +10,7 @@ import FilmthumbNailContainer from '../containers/FilmThumbnailContainer';
 import News from '../components/News';
 import AppBanner from '../components/AppBanner';
 import Footer from '../components/Footer';
+import Cineplex from '../components/Cineplex';
 
 const HomePage = ({ getFilms }) => {
     useEffect(() => {
@@ -24,6 +25,7 @@ const HomePage = ({ getFilms }) => {
             <div className='container'>
                 <FilmSelectionContainer />
                 <FilmthumbNailContainer />
+                <Cineplex />
                 <News />
             </div>
             <AppBanner />
