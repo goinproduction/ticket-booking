@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import FilmthumbNailContainer from '../containers/FilmThumbnailContainer';
 import News from '../components/News';
 import AppBanner from '../components/AppBanner';
+import Footer from '../components/Footer';
 
 const HomePage = ({ getFilms }) => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const HomePage = ({ getFilms }) => {
                 <News />
             </div>
             <AppBanner />
+            <Footer />
         </>
     );
 };

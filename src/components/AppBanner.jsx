@@ -29,7 +29,7 @@ const AppBanner = () => {
     };
 
     return (
-        <section className='app'>
+        <div className='app'>
             <div className='app__content'>
                 <div className='container'>
                     <div className='row'>
@@ -84,7 +84,7 @@ const AppBanner = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
