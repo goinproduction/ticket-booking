@@ -29,7 +29,7 @@ const AppBanner = () => {
     };
 
     return (
-        <div className='app'>
+        <div className='app' id='app'>
             <div className='app__content'>
                 <div className='container'>
                     <div className='row'>

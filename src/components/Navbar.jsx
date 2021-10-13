@@ -35,12 +35,12 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li className='header-navbar__list-item'>
-                        <a href='#' className='header-navbar__list-item-link'>
+                        <a href='#news' className='header-navbar__list-item-link'>
                             Tin Tức
                         </a>
                     </li>
                     <li className='header-navbar__list-item'>
-                        <a href='#' className='header-navbar__list-item-link'>
+                        <a href='#app' className='header-navbar__list-item-link'>
                             Ứng dụng
                         </a>
                     </li>

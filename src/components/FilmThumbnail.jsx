@@ -39,7 +39,7 @@ const FilmThumbnail = ({ films }) => {
 
     return (
         <>
-            <div className='movie'>
+            <div className='movie' id='movie'>
                 <ul className='movie-navbar'>
                     <li className='movie-navbar__item-showing-movie movie-navbar--active'>
                         <a href='#' className>

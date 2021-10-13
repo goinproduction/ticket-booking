@@ -17,7 +17,7 @@ const News = () => {
         history.push('/news-detail');
     };
     return (
-        <section className='news'>
+        <div className='news' id='news'>
             <ul className='news-navbar'>
                 <li className='news-navbar__item-showing-news news-navbar--active'>
                     <a href='#' className>
@@ -229,7 +229,7 @@ const News = () => {
                     <button className='news__viewmore-btn'>XEM THÊM</button>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

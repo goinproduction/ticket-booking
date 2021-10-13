@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getCineplexs, getCineplexById } from '../store/actions/cineplexAction';
+import test from '../assets/img/android-logo.png';
 
 const Cineplex = ({
     cineplexs,
@@ -21,7 +22,6 @@ const Cineplex = ({
     }, [cineplexId]);
 
     const handleDefaultCineplexAddress = () => {
-        console.log('hi');
         if (cineplexId === 'BHDStar') {
             setGroupId('bhd-star-cineplex-3-2');
         } else if (cineplexId === 'CGV') {
@@ -104,6 +104,21 @@ const Cineplex = ({
                                 <p className='cinema__showingtime-text'>
                                     Không có lịch chiếu
                                 </p>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-sm-3'>
+                                <img src={test} alt='' />
+                            </div>
+                            <div className='col-sm-6'>
+                                <div className='cinema_showingtime-empty'>
+                                    <p className='cinema__showingtime-text'>
+                                        Không có lịch chiếu 2
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='col-sm-3'>
+                                <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
                             </div>
                         </div>
                     </div>
