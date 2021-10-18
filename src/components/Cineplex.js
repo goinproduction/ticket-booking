@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getCineplexs, getCineplexById } from '../store/actions/cineplexAction';
+import {
+    getCineplexes,
+    getCineplexById,
+} from '../store/actions/cineplexAction';
 import test from '../assets/img/android-logo.png';
 
 const Cineplex = ({
-    cineplexs,
+    cineplexes,
     cineplexById,
-    getCineplexs,
+    getCineplexes,
     getCineplexById,
 }) => {
     const [cineplexId, setCineplexId] = useState('BHDStar');
     const [groupId, setGroupId] = useState('');
 
     useEffect(() => {
-        getCineplexs();
+        getCineplexes();
     }, []);
 
     useEffect(() => {
@@ -21,6 +24,7 @@ const Cineplex = ({
         handleDefaultCineplexAddress();
     }, [cineplexId]);
 
+    // Dirty code
     const handleDefaultCineplexAddress = () => {
         if (cineplexId === 'BHDStar') {
             setGroupId('bhd-star-cineplex-3-2');
@@ -45,7 +49,7 @@ const Cineplex = ({
                     <div className='col-sm-1 line'>
                         <div className='cinema__brand-logo'>
                             <ul className='cinema__brand-logo-list'>
-                                {cineplexs.map((cineplex, index) => (
+                                {cineplexes.map((cineplex, index) => (
                                     <li
                                         key={index}
                                         className={
@@ -130,10 +134,10 @@ const Cineplex = ({
 };
 
 const mapStateToProps = (state) => ({
-    cineplexs: state.cineplex.cineplexs,
+    cineplexes: state.cineplex.cineplexes,
     cineplexById: state.cineplex.cineplexById,
 });
 
-export default connect(mapStateToProps, { getCineplexs, getCineplexById })(
+export default connect(mapStateToProps, { getCineplexes, getCineplexById })(
     Cineplex
 );

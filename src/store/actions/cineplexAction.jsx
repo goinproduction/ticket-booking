@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GET_CINEPLEX, GET_CINEPLEX_BY_ID } from '../constants';
 
-export const getCineplexs = () => async (dispatch) => {
+export const getCineplexes = () => async (dispatch) => {
     try {
         const response = await axios.get(
             'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap'

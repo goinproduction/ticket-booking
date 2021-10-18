@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import NewsDetail from '../components/NewsDetail';
 
-const NewsDetailContainer = () => {
+const NewsdetailPage = () => {
     return (
         <>
             <Navbar />
@@ -13,4 +13,4 @@ const NewsDetailContainer = () => {
     );
 };
 
-export default NewsDetailContainer;
+export default NewsdetailPage;

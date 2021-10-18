@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import FadeLoading from '../components/FadeLoading';
-import CarouselContainer from '../containers/CarouselContainer';
-import FilmSelectionContainer from '../containers/FilmSelectionContainer';
-import NavbarContainer from '../containers/NavbarContainer';
-
+import FilmSelection from '../components/FilmSelection';
+import FilmThumbnail from '../components/FilmThumbnail';
+import Navbar from '../components/Navbar';
+import Carousel from '../components/Carousel';
 import { getFilms } from '../store/actions/filmAction';
 import { connect } from 'react-redux';
-import FilmthumbNailContainer from '../containers/FilmThumbnailContainer';
 import News from '../components/News';
 import AppBanner from '../components/AppBanner';
 import Footer from '../components/Footer';
@@ -20,11 +19,11 @@ const HomePage = ({ getFilms }) => {
     return (
         <>
             {/* <FadeLoading /> */}
-            <NavbarContainer />
-            <CarouselContainer />
+            <Navbar />
+            <Carousel />
             <div className='container'>
-                <FilmSelectionContainer />
-                <FilmthumbNailContainer />
+                <FilmSelection />
+                <FilmThumbnail />
                 <Cineplex />
                 <News />
             </div>
