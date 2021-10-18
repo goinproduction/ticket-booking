@@ -234,6 +234,62 @@
   .film-selection__menu-buy-ticket:hover {
     background-color: #b42a14; }
 
+.select-film {
+  position: relative; }
+  .select-film .select-film__dropdown {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 88%;
+    left: 1px;
+    z-index: 1000;
+    display: block;
+    float: left;
+    min-width: 250px;
+    max-height: 300px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    overflow-y: scroll; }
+    .select-film .select-film__dropdown .select-film__dropdown-list {
+      padding: 3px 20px;
+      transition: 0.2 all; }
+      .select-film .select-film__dropdown .select-film__dropdown-list:hover {
+        background-color: #60c5ef; }
+
+.select-cineplex {
+  position: relative; }
+  .select-cineplex .select-cineplex__dropdown {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 88%;
+    left: 1px;
+    z-index: 1000;
+    display: block;
+    float: left;
+    min-width: 250px;
+    max-height: 300px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    overflow-y: scroll; }
+    .select-cineplex .select-cineplex__dropdown .select-cineplex__dropdown-list {
+      padding: 3px 20px;
+      transition: 0.2 all; }
+      .select-cineplex .select-cineplex__dropdown .select-cineplex__dropdown-list:hover {
+        background-color: #60c5ef; }
+
 .signin {
   margin: 0 auto;
   float: left;

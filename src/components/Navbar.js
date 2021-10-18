@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/img/web-logo.png';
 import avt from '../assets/img/avatar.png';
-import DropdownProvince from './DropdownProvince';
+import ProvincesDropdown from './Dropdowns/ProvincesDropdown';
 import { useHistory } from 'react-router-dom';
 
 const Navbar = () => {
@@ -35,12 +35,18 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li className='header-navbar__list-item'>
-                        <a href='#news' className='header-navbar__list-item-link'>
+                        <a
+                            href='#news'
+                            className='header-navbar__list-item-link'
+                        >
                             Tin Tức
                         </a>
                     </li>
                     <li className='header-navbar__list-item'>
-                        <a href='#app' className='header-navbar__list-item-link'>
+                        <a
+                            href='#app'
+                            className='header-navbar__list-item-link'
+                        >
                             Ứng dụng
                         </a>
                     </li>
@@ -62,7 +68,7 @@ const Navbar = () => {
                     <p className='header-right__location-text'>{location}</p>
                     <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
                     {showSelection === true ? (
-                        <DropdownProvince
+                        <ProvincesDropdown
                             setLocation={setLocation}
                             setShowSelection={setShowSelection}
                         />

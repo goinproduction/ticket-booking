@@ -1,7 +1,12 @@
-import { GET_CINEPLEX, GET_CINEPLEX_BY_ID } from '../constants';
+import {
+    GET_CINEPLEX,
+    GET_CINEPLEX_BY_ID,
+    GET_CINEPLEX_BY_FILM_ID,
+} from '../constants';
 const initialState = {
     cineplexes: [],
     cineplexById: [],
+    listComplexesByFilmId: [],
 };
 
 const cineplexReducer = (state = initialState, action) => {
@@ -15,6 +20,11 @@ const cineplexReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cineplexById: action.payload,
+            };
+        case GET_CINEPLEX_BY_FILM_ID:
+            return {
+                ...state,
+                listComplexesByFilmId: action.payload,
             };
         default:
             return state;

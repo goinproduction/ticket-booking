@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
+import data from '../../fixures/provinces.json';
 
-const FilmDropdown = ({ setShowSelection, setLocation }) => {
-    const handleFilmSelection = (name) => {
+const ProvincesDropdown = ({ setShowSelection, setLocation }) => {
+    const handleProvinceSelection = (name) => {
         setLocation(name);
         setShowSelection(false);
     };
@@ -36,7 +37,7 @@ const FilmDropdown = ({ setShowSelection, setLocation }) => {
                 <li
                     key={province.id}
                     className='header-right__location-dropdown-list'
-                    onClick={handleFilmSelection.bind(this, province.name)}
+                    onClick={handleProvinceSelection.bind(this, province.name)}
                 >
                     {province.name}
                 </li>
@@ -45,4 +46,4 @@ const FilmDropdown = ({ setShowSelection, setLocation }) => {
     );
 };
 
-export default FilmDropdown;
+export default ProvincesDropdown;

@@ -1,17 +1,18 @@
 import React, { useRef, useEffect } from 'react';
-import data from '../fixures/provinces.json';
+import { connect } from 'react-redux';
 
-const DropdownProvince = ({ setShowSelection, setLocation }) => {
-    const handleProvinceSelection = (name) => {
-        setLocation(name);
-        setShowSelection(false);
+const FilmDropdown = ({ setIsOpen, setFilmName, films, setFilmId }) => {
+    const handleFilmSelection = async (name, id) => {
+        await setFilmName(name);
+        setIsOpen('');
+        setFilmId(id);
     };
 
     function useOutsideAlerter(ref) {
         useEffect(() => {
             function handleClickOutside(event) {
                 if (ref.current && !ref.current.contains(event.target)) {
-                    setShowSelection(false);
+                    setIsOpen('');
                 }
             }
 
@@ -29,21 +30,28 @@ const DropdownProvince = ({ setShowSelection, setLocation }) => {
 
     return (
         <ul
-            className='header-right__location-dropdown'
+            className='select-film__dropdown'
             id='custom-scrollbar'
             ref={wrapperRef}
         >
-            {data.map((province) => (
+            {films.map((film) => (
                 <li
-                    key={province.id}
-                    className='header-right__location-dropdown-list'
-                    onClick={handleProvinceSelection.bind(this, province.name)}
+                    key={film.maPhim}
+                    className='select-film__dropdown-list'
+                    onClick={handleFilmSelection.bind(
+                        this,
+                        film.tenPhim,
+                        film.maPhim
+                    )}
                 >
-                    {province.name}
+                    {film.tenPhim}
                 </li>
             ))}
         </ul>
     );
 };
 
-export default DropdownProvince;
+const mapStateToProps = (state) => ({
+    films: state.film.films,
+});
+export default connect(mapStateToProps, null)(FilmDropdown);
