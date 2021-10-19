@@ -5,7 +5,6 @@ import {
     getCineplexById,
     getFilmByCineplex,
 } from '../store/actions/cineplexAction';
-import test from '../assets/img/android-logo.png';
 
 const Cineplex = ({
     cineplexes,
@@ -13,20 +12,30 @@ const Cineplex = ({
     getCineplexes,
     getCineplexById,
     getFilmByCineplex,
+    listCineplexGroup,
 }) => {
     const [cineplexId, setCineplexId] = useState('BHDStar');
-    const [groupId, setGroupId] = useState('');
+    const [groupId, setGroupId] = useState(null);
+    const [lstGroup, setListGroup] = useState([]);
+    const [lstFilm, setLstFilm] = useState([]);
 
     useEffect(() => {
         getCineplexes();
     }, []);
 
     useEffect(() => {
+        let lstGroupBuff = getCineplexGroupFromCineplexId();
+        let lstFilmBuff = getFilmFromCineplexGroup();
+        setListGroup(lstGroupBuff);
+        setLstFilm(lstFilmBuff);
+    }, [groupId]);
+
+    useEffect(() => {
         getCineplexById(cineplexId);
         getFilmByCineplex(cineplexId);
         handleDefaultCineplexAddress();
     }, [cineplexId]);
-
+    console.log(groupId);
     // Dirty code
     const handleDefaultCineplexAddress = () => {
         if (cineplexId === 'BHDStar') {
@@ -45,6 +54,29 @@ const Cineplex = ({
             setGroupId('megags-cao-thang');
         }
     };
+
+    // Get cineplex group from cineplexId
+    const getCineplexGroupFromCineplexId = () => {
+        let lstGroup = [];
+        listCineplexGroup.forEach((item) => {
+            if (item.maCumRap === groupId) {
+                lstGroup.push(item);
+            }
+        });
+        return lstGroup;
+    };
+
+    // Get films from cineplex group
+    const getFilmFromCineplexGroup = () => {
+        let films = [];
+        lstGroup.forEach((item) => {
+            item.danhSachPhim.forEach((item) => {
+                films.push(item);
+            });
+        });
+        return films;
+    };
+
     return (
         <>
             <div className='cinema' id='cineplex'>
@@ -60,9 +92,10 @@ const Cineplex = ({
                                                 ? 'cinema__brand-logo-list-item cinema__brand-logo-list-item--active'
                                                 : 'cinema__brand-logo-list-item'
                                         }
-                                        onClick={() =>
-                                            setCineplexId(cineplex.maHeThongRap)
-                                        }
+                                        onClick={setCineplexId.bind(
+                                            this,
+                                            cineplex.maHeThongRap
+                                        )}
                                     >
                                         <a>
                                             <img
@@ -105,24 +138,20 @@ const Cineplex = ({
                             );
                         })}
                     </div>
-                    <div className='col-sm-7 line'>
-                        {/* <div className='cinema__showingtime'>
-                            <div className='cinema_showingtime-empty'>
-                                <p className='cinema__showingtime-text'>
-                                    Không có lịch chiếu
-                                </p>
-                            </div>
-                        </div> */}
-                        <div className='cinema__showingtime-container'>
-                            <div className='cinema__showingtime'>
+                    <div
+                        className='col-sm-7 line cinema__showingtime-container'
+                        id='custom-scrollbar'
+                    >
+                        {lstFilm.map((lst, index) => (
+                            <div className='cinema__showingtime' key={index}>
                                 <div className='row'>
-                                    <div className='col-sm-3'>
-                                        <img src={test} alt='' />
+                                    <div className='col-sm-2'>
+                                        <img src={lst.hinhAnh} alt='phim' />
                                     </div>
-                                    <div className='col-sm-6'>
+                                    <div className='col-sm-7'>
                                         <div className='cinema_showingtime-empty'>
                                             <p className='cinema__showingtime-text'>
-                                                Không có lịch chiếu
+                                                {lst.tenPhim}
                                             </p>
                                         </div>
                                     </div>
@@ -133,7 +162,7 @@ const Cineplex = ({
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
