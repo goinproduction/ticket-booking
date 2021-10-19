@@ -3,6 +3,7 @@ import {
     GET_CINEPLEX,
     GET_CINEPLEX_BY_ID,
     GET_CINEPLEX_BY_FILM_ID,
+    GET_LIST_CINEPLEX_GROUP,
 } from '../constants';
 
 export const getCineplexes = () => async (dispatch) => {
@@ -39,6 +40,22 @@ export const getCineplexByFilmId = (filmdId) => async (dispatch) => {
         if (response.data) {
             dispatch({
                 type: GET_CINEPLEX_BY_FILM_ID,
+                payload: response.data,
+            });
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const getFilmByCineplex = (cineplexId) => async (dispatch) => {
+    try {
+        const response = await axios.get(
+            `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${cineplexId}&maNhom=GP11`
+        );
+        if (response) {
+            dispatch({
+                type: GET_LIST_CINEPLEX_GROUP,
                 payload: response.data,
             });
         }

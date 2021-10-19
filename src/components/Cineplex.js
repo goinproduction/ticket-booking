@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
     getCineplexes,
     getCineplexById,
+    getFilmByCineplex,
 } from '../store/actions/cineplexAction';
 import test from '../assets/img/android-logo.png';
 
@@ -11,6 +12,7 @@ const Cineplex = ({
     cineplexById,
     getCineplexes,
     getCineplexById,
+    getFilmByCineplex,
 }) => {
     const [cineplexId, setCineplexId] = useState('BHDStar');
     const [groupId, setGroupId] = useState('');
@@ -21,6 +23,7 @@ const Cineplex = ({
 
     useEffect(() => {
         getCineplexById(cineplexId);
+        getFilmByCineplex(cineplexId);
         handleDefaultCineplexAddress();
     }, [cineplexId]);
 
@@ -142,8 +145,11 @@ const Cineplex = ({
 const mapStateToProps = (state) => ({
     cineplexes: state.cineplex.cineplexes,
     cineplexById: state.cineplex.cineplexById,
+    listCineplexGroup: state.cineplex.listCineplexGroup,
 });
 
-export default connect(mapStateToProps, { getCineplexes, getCineplexById })(
-    Cineplex
-);
+export default connect(mapStateToProps, {
+    getCineplexes,
+    getCineplexById,
+    getFilmByCineplex,
+})(Cineplex);

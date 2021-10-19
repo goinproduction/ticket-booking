@@ -2,12 +2,14 @@ import {
     GET_CINEPLEX,
     GET_CINEPLEX_BY_ID,
     GET_CINEPLEX_BY_FILM_ID,
+    GET_LIST_CINEPLEX_GROUP,
 } from '../constants';
 const initialState = {
     cineplexes: [],
     cineplexById: [],
     listComplexesByFilmId: [],
     listShowingTime: [],
+    listCineplexGroup: [],
 };
 
 const cineplexReducer = (state = initialState, action) => {
@@ -25,6 +27,7 @@ const cineplexReducer = (state = initialState, action) => {
         case GET_CINEPLEX_BY_FILM_ID:
             let nameCinemas = [];
             let showingTimeBuffer = [];
+
             action.payload.heThongRapChieu.forEach((item) => {
                 item.cumRapChieu.forEach((item) => {
                     nameCinemas.push(item);
@@ -33,8 +36,21 @@ const cineplexReducer = (state = initialState, action) => {
                     });
                 });
             });
+
             state.listComplexesByFilmId = nameCinemas;
             state.listShowingTime = showingTimeBuffer;
+
+            return {
+                ...state,
+            };
+        case GET_LIST_CINEPLEX_GROUP:
+            let cineplexBuff = [];
+            action.payload.forEach((item) => {
+                item.lstCumRap.forEach((item) => {
+                    cineplexBuff.push(item);
+                });
+            });
+            state.listCineplexGroup = cineplexBuff;
             return {
                 ...state,
             };
