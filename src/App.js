@@ -1,21 +1,41 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { routerHome } from "./routes";
+import HomeTemplate from "./screens/User";
+import Login from "./screens/User/login/Login";
+import SignUp from "./screens/User/sign-up/SignUp";
+import Checkout from "./screens/User/checkout/Checkout";
+// import FirebaseAuth from "./screens/User/login/FirebaseAuth";
 
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import Register from './components/Register';
-import NewsDetailPage from './pages/NewsDetailPage';
+const showMenuHome = (routes) => {
+  if (routes && routes.length > 0) {
+    return routes.map((item, index) => {
+      return (
+        <HomeTemplate
+          key={index}
+          path={item.path}
+          exact={item.exact}
+          Component={item.component}
+          scroll={item.scroll}
+        ></HomeTemplate>
+      );
+    });
+  }
+};
 
 function App() {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path='/' component={HomePage} />
-                <Route exact path='/login' component={LoginPage} />
-                <Route exact path='/register' component={Register} />
-                <Route exact path='/news-detail' component={NewsDetailPage} />
-            </Switch>
-        </Router>
-    );
+  return (
+    <BrowserRouter>
+      <Switch>
+        {showMenuHome(routerHome)}
+        <Route path="/login" component={Login} />
+        {/* <Route path="/firebase-auth" component={FirebaseAuth} /> */}
+        <Route path="/sign-up" component={SignUp} />
+        <Route path="/checkout/:id" component={Checkout} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default App;
