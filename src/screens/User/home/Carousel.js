@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import HomeTool from "../../../components/User/HomeTool";
+import HomeTool from "../../../components/User/MovieSelect";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 function SampleNextArrow(props) {

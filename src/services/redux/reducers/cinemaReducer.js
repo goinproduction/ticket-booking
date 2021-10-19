@@ -1,40 +1,40 @@
-import * as ActionType from "./../constants/contants";
+import {
+    GET_LIST_GROUP_CINEMA,
+    GET_GROUP_CINEMA_INFO,
+    SET_CHOSEN_GROUP_CINEMA,
+    GET_CINEMA_MOVIES,
+} from './../constants/contants';
 
 let initialState = {
-  listGroupCinema: [],
-  // cinema: [],
-  groupCinemaShowtimes: [],
-  chosenGroupCinema: "",
-  groupCinemaInfo: {}
+    listGroupCinema: [],
+    groupCinemaShowtimes: [],
+    chosenGroupCinema: '',
+    groupCinemaInfo: {},
 };
 
 const cinemaReducer = (state = initialState, action) => {
-  switch (action.type) {
+    switch (action.type) {
+        case GET_LIST_GROUP_CINEMA:
+            state.chosenGroupCinema = action.listGroupCinema[0].maHeThongRap;
+            state.listGroupCinema = action.listGroupCinema;
+            return { ...state };
 
-    case ActionType.GET_LIST_GROUP_CINEMA:
-      //After get list group-cinema, set the first child to chosenGroupCinema
-      state.chosenGroupCinema = action.listGroupCinema[0].maHeThongRap;
-      state.listGroupCinema = action.listGroupCinema;
-      return { ...state };
+        case GET_GROUP_CINEMA_INFO:
+            let groupCinemaInfo = { ...state.groupCinemaInfo };
+            groupCinemaInfo[action.maHeThongRap] = action.data;
+            return { ...state, groupCinemaInfo: groupCinemaInfo };
 
-    case ActionType.GET_GROUP_CINEMA_INFO:
-      //Modify group-cinemas-info follow format {cinema-1_name:(cinema-1_info), cinema-2_name:(cinema-2_info),...}
+        case SET_CHOSEN_GROUP_CINEMA:
+            state.chosenGroupCinema = action.chosenGroupCinema;
+            return { ...state };
 
-      let groupCinemaInfo = { ...state.groupCinemaInfo };
-      groupCinemaInfo[action.maHeThongRap] = action.data;
-      return { ...state, groupCinemaInfo: groupCinemaInfo };
+        case GET_CINEMA_MOVIES:
+            state.groupCinemaShowtimes = action.groupCinemaShowtimes;
+            return { ...state };
 
-    case ActionType.SET_CHOSEN_GROUP_CINEMA:
-      // state.cinema = action.cinema;
-      state.chosenGroupCinema = action.chosenGroupCinema;
-      return { ...state };
-
-    case ActionType.GET_CINEMA_MOVIES:
-      state.groupCinemaShowtimes = action.groupCinemaShowtimes;
-      return { ...state };
-    default:
-      return { ...state };
-  }
+        default:
+            return { ...state };
+    }
 };
 
 export default cinemaReducer;
