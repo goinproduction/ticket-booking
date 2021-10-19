@@ -31,13 +31,16 @@ export const getCineplexById = (Id) => async (dispatch) => {
     }
 };
 
-export const getCineplexByFilmId = (Id) => async (dispatch) => {
+export const getCineplexByFilmId = (filmdId) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${Id}`
+            `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${filmdId}`
         );
         if (response.data) {
-            dispatch({ type: GET_CINEPLEX_BY_ID, payload: response.data });
+            dispatch({
+                type: GET_CINEPLEX_BY_FILM_ID,
+                payload: response.data,
+            });
         }
     } catch (error) {
         console.log(error);

@@ -10,14 +10,13 @@ const CineplexDropdown = ({
     filmId,
 }) => {
     const handleFilmSelection = async (name) => {
-        setCineplex(name);
+        await setCineplex(name);
         setIsOpen('');
     };
-    console.log(filmId);
 
-    useEffect(async () => {
-        await getCineplexByFilmId(1478);
-    }, []);
+    useEffect(() => {
+        getCineplexByFilmId(filmId);
+    }, [filmId]);
 
     function useOutsideAlerter(ref) {
         useEffect(() => {
@@ -33,35 +32,42 @@ const CineplexDropdown = ({
                 // Unbind the event listener on clean up
                 document.removeEventListener('mousedown', handleClickOutside);
             };
-        }, [ref]);
+        }, []);
     }
-
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
-
     return (
         <ul
             className='select-cineplex__dropdown'
             id='custom-scrollbar'
             ref={wrapperRef}
         >
-            {/* {listComplexesByFilmId.map((cineplex, index) => (
-                <li
-                    key={index}
-                    className='select-cineplex__dropdown-list'
-                    onClick={handleFilmSelection.bind(
-                        this,
-                        cineplex.tenHeThongRap
-                    )}
-                >
-                    {cineplex.tenHeThongRap}
+            {filmId === null ? (
+                <li className='select-cineplex__dropdown-list'>
+                    Vui lòng chọn phim
                 </li>
-            ))} */}
+            ) : (
+                listComplexesByFilmId.map((cineplex, index) => (
+                    <li
+                        key={index}
+                        className='select-cineplex__dropdown-list'
+                        onClick={handleFilmSelection.bind(
+                            this,
+                            cineplex.tenCumRap
+                        )}
+                    >
+                        {cineplex.tenCumRap}
+                    </li>
+                ))
+            )}
         </ul>
     );
 };
 
 const mapStateToProps = (state) => ({
-    listComplexesByFilmId: state.film.listComplexesByFilmId,
+    listComplexesByFilmId: state.cineplex.listComplexesByFilmId,
 });
-export default connect(mapStateToProps, getCineplexByFilmId)(CineplexDropdown);
+
+export default connect(mapStateToProps, { getCineplexByFilmId })(
+    CineplexDropdown
+);

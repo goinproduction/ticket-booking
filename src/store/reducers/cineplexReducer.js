@@ -7,6 +7,7 @@ const initialState = {
     cineplexes: [],
     cineplexById: [],
     listComplexesByFilmId: [],
+    listShowingTime: [],
 };
 
 const cineplexReducer = (state = initialState, action) => {
@@ -22,9 +23,20 @@ const cineplexReducer = (state = initialState, action) => {
                 cineplexById: action.payload,
             };
         case GET_CINEPLEX_BY_FILM_ID:
+            let nameCinemas = [];
+            let showingTimeBuffer = [];
+            action.payload.heThongRapChieu.forEach((item) => {
+                item.cumRapChieu.forEach((item) => {
+                    nameCinemas.push(item);
+                    item.lichChieuPhim.forEach((item) => {
+                        showingTimeBuffer.push(item);
+                    });
+                });
+            });
+            state.listComplexesByFilmId = nameCinemas;
+            state.listShowingTime = showingTimeBuffer;
             return {
                 ...state,
-                listComplexesByFilmId: action.payload,
             };
         default:
             return state;

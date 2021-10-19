@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import FilmDropdown from './Dropdowns/FilmsDropdown';
 import CineplexesDropdown from './Dropdowns/CineplexesDropdown';
+import DateDropdown from './Dropdowns/DateDropdown';
+import SessionDropdown from './Dropdowns/SessionDropdown';
 
 const FilmSelection = ({ films }) => {
     const [isOpen, setIsOpen] = useState('');
@@ -10,8 +12,21 @@ const FilmSelection = ({ films }) => {
     const [cineplex, setCineplex] = useState('Rạp');
     const [showingDate, setShowingDate] = useState('Ngày chiếu');
     const [showingTime, setShowingTime] = useState('Suất chiếu');
-
-    console.log(filmId);
+    useEffect(() => {
+        if (filmName !== 'Phim') {
+            setIsOpen('select-cineplex');
+        }
+    }, [filmName]);
+    useEffect(() => {
+        if (cineplex !== 'Rạp') {
+            setIsOpen('select-date');
+        }
+    }, [cineplex]);
+    useEffect(() => {
+        if (showingDate !== 'Ngày chiếu') {
+            setIsOpen('select-session');
+        }
+    }, [showingDate]);
     return (
         <div className='container'>
             <section className='film-selection'>
@@ -29,6 +44,7 @@ const FilmSelection = ({ films }) => {
                                 setIsOpen={setIsOpen}
                                 setFilmName={setFilmName}
                                 setFilmId={setFilmId}
+                                filmName={filmName}
                             />
                         ) : null}
                     </div>
@@ -50,21 +66,35 @@ const FilmSelection = ({ films }) => {
                     </div>
                     <div
                         className='film-selection__item select-date'
-                        // onClick={handleSelect.bind(this, 'select-date')}
+                        onClick={setIsOpen.bind(this, 'select-date')}
                     >
                         <p className='film-selection__menu-date-time'>
                             {showingDate}
                         </p>
                         <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
+                        {isOpen === 'select-date' ? (
+                            <DateDropdown
+                                setShowingDate={setShowingDate}
+                                setIsOpen={setIsOpen}
+                                cineplex={cineplex}
+                            />
+                        ) : null}
                     </div>
                     <div
                         className='film-selection__item select-session'
-                        // onClick={handleSelect.bind(this, 'select-session')}
+                        onClick={setIsOpen.bind(this, 'select-session')}
                     >
                         <p className='film-selection__menu-showtime-time'>
                             {showingTime}
                         </p>
                         <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
+                        {isOpen === 'select-session' ? (
+                            <SessionDropdown
+                                setIsOpen={setIsOpen}
+                                setShowingTime={setShowingTime}
+                                showingDate={showingDate}
+                            />
+                        ) : null}
                     </div>
                     <div className='film-selection__item'>
                         <button className='film-selection__menu-buy-ticket'>

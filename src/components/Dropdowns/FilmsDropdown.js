@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 const FilmDropdown = ({ setIsOpen, setFilmName, films, setFilmId }) => {
     const handleFilmSelection = async (name, id) => {
         await setFilmName(name);
-        setIsOpen('');
         setFilmId(id);
     };
 
