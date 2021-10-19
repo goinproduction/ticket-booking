@@ -14,12 +14,19 @@
     justify-content: center;
     margin-bottom: 30px;
     width: 100%;
+    a {
+        cursor: pointer;
+    }
 }
 
 .movie-navbar li.movie-navbar--active a {
     font-size: 2.4rem;
     color: #f55238;
     font-weight: 600;
+
+    &:hover {
+        color: #f55238;
+    }
 }
 
 .movie-navbar li {
@@ -30,10 +37,15 @@
     text-decoration: none;
     padding: 10px 15px;
     text-decoration: none;
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 0;
+    font-size: 2.2rem;
+    transition: all 0.2s;
     color: $black-color;
+    font-weight: 600;
+
+    &:hover {
+        font-size: 2.6rem;
+        color: $black-color;
+    }
 }
 
 .movie-navbar__item-upcoming-movie a {

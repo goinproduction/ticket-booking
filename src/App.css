@@ -553,11 +553,15 @@
   justify-content: center;
   margin-bottom: 30px;
   width: 100%; }
+  .movie-navbar a {
+    cursor: pointer; }
 
 .movie-navbar li.movie-navbar--active a {
   font-size: 2.4rem;
   color: #f55238;
   font-weight: 600; }
+  .movie-navbar li.movie-navbar--active a:hover {
+    color: #f55238; }
 
 .movie-navbar li {
   list-style: none; }
@@ -566,10 +570,13 @@
   text-decoration: none;
   padding: 10px 15px;
   text-decoration: none;
-  font-size: 2.4rem;
-  font-weight: 600;
-  margin-bottom: 0;
-  color: #000; }
+  font-size: 2.2rem;
+  transition: all 0.2s;
+  color: #000;
+  font-weight: 600; }
+  .movie-navbar__item-showing-movie a:hover {
+    font-size: 2.6rem;
+    color: #000; }
 
 .movie-navbar__item-upcoming-movie a {
   text-decoration: none;
@@ -1705,14 +1712,26 @@
   text-decoration: none;
   color: #fb4226 !important; }
 
-.cinema_showingtime-empty {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 30px; }
-
-.cinema__showingtime-text {
-  margin: 0; }
+.cinema__showingtime-container {
+  padding: 30px 15px;
+  width: 100%; }
+  .cinema__showingtime-container .cinema__showingtime {
+    margin-bottom: 15px; }
+    .cinema__showingtime-container .cinema__showingtime .cinema_showingtime-empty {
+      font-size: 1.5rem;
+      font-weight: 600; }
+      .cinema__showingtime-container .cinema__showingtime .cinema_showingtime-empty .cinema__showingtime-text {
+        margin: 0;
+        transform: translateY(50%); }
+    .cinema__showingtime-container .cinema__showingtime img {
+      width: 50px;
+      height: 50px; }
+    .cinema__showingtime-container .cinema__showingtime .icon {
+      float: right; }
+      .cinema__showingtime-container .cinema__showingtime .icon i {
+        font-size: 2rem;
+        display: block;
+        transform: translateY(50%); }
 
 * {
   box-sizing: inherit; }

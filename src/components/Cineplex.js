@@ -103,26 +103,32 @@ const Cineplex = ({
                         })}
                     </div>
                     <div className='col-sm-7 line'>
-                        <div className='cinema__showingtime'>
+                        {/* <div className='cinema__showingtime'>
                             <div className='cinema_showingtime-empty'>
                                 <p className='cinema__showingtime-text'>
                                     Không có lịch chiếu
                                 </p>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-sm-3'>
-                                <img src={test} alt='' />
-                            </div>
-                            <div className='col-sm-6'>
-                                <div className='cinema_showingtime-empty'>
-                                    <p className='cinema__showingtime-text'>
-                                        Không có lịch chiếu 2
-                                    </p>
+                        </div> */}
+                        <div className='cinema__showingtime-container'>
+                            <div className='cinema__showingtime'>
+                                <div className='row'>
+                                    <div className='col-sm-3'>
+                                        <img src={test} alt='' />
+                                    </div>
+                                    <div className='col-sm-6'>
+                                        <div className='cinema_showingtime-empty'>
+                                            <p className='cinema__showingtime-text'>
+                                                Không có lịch chiếu
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='col-sm-3'>
+                                        <div className='icon'>
+                                            <i className='fa fa-chevron-down' />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='col-sm-3'>
-                                <i className='header-right__location-dropdown-icon fa fa-chevron-down' />
                             </div>
                         </div>
                     </div>

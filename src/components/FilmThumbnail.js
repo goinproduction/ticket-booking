@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
 import playBtn from '../assets/img/play-video.png';
 import smallStar from '../assets/img/star1.png';
 import halfStar from '../assets/img/star1.2.png';
 import TrailerModal from './TrailerModal';
+import { getFilms } from '../store/actions/filmAction';
 
-const FilmThumbnail = ({ films }) => {
+const FilmThumbnail = ({ films, getFilms }) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState('');
+    const [currentList, setCurrentList] = useState('GP11');
+
+    useEffect(() => {
+        getFilms(currentList);
+    }, [currentList]);
 
     var settings = {
         infinite: true,
@@ -41,15 +47,25 @@ const FilmThumbnail = ({ films }) => {
         <>
             <div className='movie' id='movie'>
                 <ul className='movie-navbar'>
-                    <li className='movie-navbar__item-showing-movie movie-navbar--active'>
-                        <a href='#' className>
-                            Đang Chiếu
-                        </a>
+                    <li
+                        className={
+                            currentList === 'GP11'
+                                ? 'movie-navbar__item-showing-movie movie-navbar--active'
+                                : 'movie-navbar__item-showing-movie'
+                        }
+                        onClick={setCurrentList.bind(this, 'GP11')}
+                    >
+                        <a className>Đang Chiếu</a>
                     </li>
-                    <li className='movie-navbar__item-upcoming-movie'>
-                        <a href='#' className>
-                            Sắp Chiếu
-                        </a>
+                    <li
+                        className={
+                            currentList === 'GP10'
+                                ? 'movie-navbar__item-upcoming-movie movie-navbar--active'
+                                : 'movie-navbar__item-upcoming-movie'
+                        }
+                        onClick={setCurrentList.bind(this, 'GP10')}
+                    >
+                        <a className>Sắp Chiếu</a>
                     </li>
                 </ul>
 
@@ -154,4 +170,4 @@ const mapStateToProps = (state) => ({
     films: state.film.films,
 });
 
-export default connect(mapStateToProps, null)(FilmThumbnail);
+export default connect(mapStateToProps, { getFilms })(FilmThumbnail);
