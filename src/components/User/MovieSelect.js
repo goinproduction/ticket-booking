@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as action from '../../services/redux/actions/movieSelectAction';
 import { NavLink } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
@@ -13,7 +13,7 @@ import Input from '@material-ui/core/Input';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
-const theme = createMuiTheme({
+const theme = createTheme({
     palette: {
         primary: {
             main: '#ff7539',
@@ -415,7 +415,7 @@ function MovieSelect(props) {
 const mapStateToProps = (state) => {
     return {
         listMovie: state.movieReducer.listMovie,
-        cinemas: state.homeToolReducer.cinemas,
+        cinemas: state.movieSelectReducer.cinemas,
         showtimeInfo: state.movieSelectReducer.showtimeInfo,
     };
 };

@@ -191,7 +191,7 @@ export default function CheckoutStep2(props) {
         );
         Axios({
             method: 'POST',
-            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe`,
+            url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe`,
             data: ticketForm,
             headers: { Authorization: 'Bearer ' + user.accessToken },
         })

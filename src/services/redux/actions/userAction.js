@@ -1,4 +1,4 @@
-import * as ActionType from './../constants/contants';
+import { SIGN_UP, LOGIN } from './../constants/contants';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -21,7 +21,7 @@ export const login = (dataLogin) => {
                         dataLogin.history.push('/');
                     }
                     dispatch({
-                        type: ActionType.LOGIN,
+                        type: LOGIN,
                     });
                 } else {
                     alert(
@@ -59,7 +59,7 @@ export const signUpAPI = (payload) => {
                     });
                 });
                 dispatch({
-                    type: ActionType.SIGN_UP,
+                    type: SIGN_UP,
                 });
             })
             .catch((err) => {

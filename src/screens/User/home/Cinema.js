@@ -5,12 +5,12 @@ import CategoryGroupCinema from "../../../components/User/CategoryGroupCinema";
 import CategoryGroupCinemaMobile from "../../../components/User/CategoryGroupCinemaMobile";
 import GroupCinema from "../../../components/User/GroupCinema";
 
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#ff7539"
