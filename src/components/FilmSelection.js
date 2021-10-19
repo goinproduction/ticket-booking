@@ -27,6 +27,12 @@ const FilmSelection = ({ films }) => {
             setIsOpen('select-session');
         }
     }, [showingDate]);
+
+    let isValid =
+        filmName !== 'Phim' &&
+        cineplex !== 'Rạp' &&
+        showingDate !== 'Ngày chiếu' &&
+        showingTime !== 'Suất chiếu';
     return (
         <div className='container'>
             <section className='film-selection'>
@@ -97,7 +103,13 @@ const FilmSelection = ({ films }) => {
                         ) : null}
                     </div>
                     <div className='film-selection__item'>
-                        <button className='film-selection__menu-buy-ticket'>
+                        <button
+                            className={
+                                isValid
+                                    ? 'film-selection__menu-buy-ticket--active'
+                                    : 'film-selection__menu-buy-ticket'
+                            }
+                        >
                             MUA VÉ NGAY
                         </button>
                     </div>
