@@ -1,4 +1,9 @@
-import * as ActionType from './../constants/contants';
+import {
+    GET_LIST_GROUP_CINEMA,
+    GET_GROUP_CINEMA_INFO,
+    SET_CHOSEN_GROUP_CINEMA,
+    GET_CINEMA_MOVIES,
+} from './../constants/contants';
 import Axios from 'axios';
 
 export const getListGroupCinemaAPI = () => {
@@ -9,7 +14,7 @@ export const getListGroupCinemaAPI = () => {
         })
             .then((result) => {
                 dispatch({
-                    type: ActionType.GET_LIST_GROUP_CINEMA,
+                    type: GET_LIST_GROUP_CINEMA,
                     listGroupCinema: result.data,
                 });
             })
@@ -27,7 +32,7 @@ export const getGroupCinemaInfoAPI = (maHeThongRap) => {
         })
             .then((result) => {
                 dispatch({
-                    type: ActionType.GET_GROUP_CINEMA_INFO,
+                    type: GET_GROUP_CINEMA_INFO,
                     data: result.data,
                     maHeThongRap: maHeThongRap,
                 });
@@ -41,7 +46,7 @@ export const getGroupCinemaInfoAPI = (maHeThongRap) => {
 export const setChosenGroupCinema = (chosenGroupCinema) => {
     return (dispatch) => {
         dispatch({
-            type: ActionType.SET_CHOSEN_GROUP_CINEMA,
+            type: SET_CHOSEN_GROUP_CINEMA,
             chosenGroupCinema,
         });
     };
@@ -55,7 +60,7 @@ export const getCinemaMovies = (payload) => {
         })
             .then((result) => {
                 dispatch({
-                    type: ActionType.GET_CINEMA_MOVIES,
+                    type: GET_CINEMA_MOVIES,
                     groupCinemaShowtimes: result.data,
                 });
             })

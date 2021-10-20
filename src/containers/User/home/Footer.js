@@ -26,8 +26,7 @@ import android from '../../../assets/img/android-logo.png';
 import zion from '../../../assets/img/zion-logo.jpg';
 import bct from '../../../assets/img/bct.png';
 
-let href = '#';
-
+let href = '#/';
 const Footer = () => {
     return (
         <div className='footer'>
@@ -70,11 +69,7 @@ const Footer = () => {
                                         alt='BHD'
                                     />
                                 </a>
-                                <a
-                                    href={href}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={galaxy}
