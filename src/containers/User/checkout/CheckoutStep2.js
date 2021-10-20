@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-
+import notify from '../../../assets/img/notification.png';
+import screen from '../../../assets/img/screen.png';
 export default function CheckoutStep2(props) {
     let user = JSON.parse(localStorage.getItem('User'));
 
@@ -380,7 +381,7 @@ export default function CheckoutStep2(props) {
                 className='blankSeatNotification text-center'
             >
                 <Modal.Body>
-                    <img src='/img/notification.png' alt='notification' />
+                    <img src={notify} alt='notification' />
                     <span
                         id='blankSeatNotification__text'
                         className='blankSeatNotification__text'
@@ -463,7 +464,7 @@ export default function CheckoutStep2(props) {
                     <div className='seat-checkout__wrap'>
                         <div className='seat-checkout'>
                             <div className='seat-checkout__top'>
-                                <img src='/img/screen.png' alt='screen' />
+                                <img src={screen} alt='screen' />
                             </div>
                             <div className='seat-checkout__map'>
                                 {renderSeat()}
