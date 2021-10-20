@@ -11,7 +11,7 @@ import GroupCinemaMovies from '../../../components/User/GroupCinemaMovies';
 import Footer from './../home/Footer';
 import Loader from '../../../components/User/Loader';
 
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const theme = createMuiTheme({
+const theme = createTheme({
     palette: {
         primary: {
             main: '#ff7539',

@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as action from './../../services/redux/actions/cinemaActions';
 import CinemaMovies from './CinemaMovies';
-import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
-import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -30,7 +30,7 @@ function CategoryGroupCinemaMobile(props) {
             },
         },
         expanded: {},
-    })(MuiExpansionPanel);
+    })(Accordion);
 
     //ExpansionPanel of Cinema
     const ExpansionPanel2 = withStyles({
@@ -59,7 +59,7 @@ function CategoryGroupCinemaMobile(props) {
             },
         },
         expanded: {},
-    })(MuiExpansionPanel);
+    })(Accordion);
 
     //Common ExpansionPanelSummary
     const ExpansionPanelSummary = withStyles({
@@ -80,7 +80,7 @@ function CategoryGroupCinemaMobile(props) {
             },
         },
         expanded: {},
-    })(MuiExpansionPanelSummary);
+    })(AccordionSummary);
 
     //Common ExpansionPanelSummary
     const ExpansionPanelSummary2 = withStyles({
@@ -101,7 +101,7 @@ function CategoryGroupCinemaMobile(props) {
             },
         },
         expanded: {},
-    })(MuiExpansionPanelSummary);
+    })(AccordionSummary);
 
     //GroupCinema's ExpansionPanelDetails
     const ExpansionPanelDetails = withStyles((theme) => ({
@@ -109,12 +109,12 @@ function CategoryGroupCinemaMobile(props) {
             padding: 0,
             display: 'block',
         },
-    }))(MuiExpansionPanelDetails);
+    }))(AccordionDetails);
 
     //Cinema's ExpansionPanelDetails
     const ExpansionPanelDetails2 = withStyles((theme) => ({
         root: { padding: 0 },
-    }))(MuiExpansionPanelDetails);
+    }))(AccordionDetails);
 
     const handleChangeExpansion = (panel) => (event, newExpanded) => {
         if (newExpanded) {
