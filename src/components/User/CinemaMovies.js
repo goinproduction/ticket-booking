@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
-import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { withStyles } from '@material-ui/core/styles';
@@ -36,7 +36,7 @@ const ExpansionPanel = withStyles({
         },
     },
     expanded: {},
-})(MuiExpansionPanel);
+})(Accordion);
 
 const ExpansionPanelSummary = withStyles({
     root: {
@@ -56,13 +56,13 @@ const ExpansionPanelSummary = withStyles({
         },
     },
     expanded: {},
-})(MuiExpansionPanelSummary);
+})(AccordionSummary);
 
 const ExpansionPanelDetails = withStyles((theme) => ({
     root: {
         padding: '10px 20px',
     },
-}))(MuiExpansionPanelDetails);
+}))(AccordionDetails);
 
 //Main
 const CinemaMovies = (props) => {

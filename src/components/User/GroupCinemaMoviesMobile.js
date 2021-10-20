@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
-import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -55,7 +55,7 @@ const ExpansionPanel = withStyles({
         },
     },
     expanded: {},
-})(MuiExpansionPanel);
+})(Accordion);
 
 //ExpansionPanel of Cinema
 const ExpansionPanel2 = withStyles({
@@ -85,7 +85,7 @@ const ExpansionPanel2 = withStyles({
         },
     },
     expanded: {},
-})(MuiExpansionPanel);
+})(Accordion);
 
 //Common ExpansionPanelSummary
 const ExpansionPanelSummary = withStyles({
@@ -106,7 +106,7 @@ const ExpansionPanelSummary = withStyles({
         },
     },
     expanded: {},
-})(MuiExpansionPanelSummary);
+})(AccordionSummary);
 
 //GroupCinema's ExpansionPanelDetails
 const ExpansionPanelDetails = withStyles((theme) => ({
@@ -114,14 +114,14 @@ const ExpansionPanelDetails = withStyles((theme) => ({
         padding: 0,
         display: 'block',
     },
-}))(MuiExpansionPanelDetails);
+}))(AccordionDetails);
 
 //Cinema's ExpansionPanelDetails
 const ExpansionPanelDetails2 = withStyles((theme) => ({
     root: {
         padding: '0 20px 20px 20px',
     },
-}))(MuiExpansionPanelDetails);
+}))(AccordionDetails);
 
 //Main
 function GroupCinemaMoviesMobile(props) {

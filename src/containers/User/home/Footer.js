@@ -25,6 +25,7 @@ import fb from '../../../assets/img/facebook-logo.png';
 import android from '../../../assets/img/android-logo.png';
 import zion from '../../../assets/img/zion-logo.jpg';
 import bct from '../../../assets/img/bct.png';
+
 let href = '#';
 
 const Footer = () => {
