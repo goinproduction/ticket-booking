@@ -12,6 +12,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import Dropdown from './Dropdown';
 
+import logo from '../../assets/img/web-logo.png';
+
 const useStyles = makeStyles((theme) => ({
     //Avatar size
     small: {
@@ -270,11 +272,7 @@ export default function Navbar(props) {
                         className='navbar__brand'
                         to='/'
                     >
-                        <img
-                            className='logo'
-                            src='/img/web-logo.png'
-                            alt='logo'
-                        ></img>
+                        <img className='logo' src={logo} alt='logo'></img>
                     </NavLink>
                 </div>
             </div>
@@ -286,11 +284,7 @@ export default function Navbar(props) {
                         className='navbar__brand'
                         to='/'
                     >
-                        <img
-                            className='logo'
-                            src='/img/web-logo.png'
-                            alt='logo'
-                        ></img>
+                        <img className='logo' src={logo} alt='logo'></img>
                     </NavLink>
                 </div>
                 <div className='navbar__center'>
