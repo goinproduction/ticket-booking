@@ -1,19 +1,9 @@
-import React from "react";
-
+import React from 'react';
+import fade from '../../assets/img/11.png'
 export default function Loader() {
-  return (
-    <div id="loader" className="loader__wrap">
-      <div className="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  );
+    return (
+        <div className='logo-loading'>
+            <img className='animated tada' src={fade} />
+        </div>
+    );
 }

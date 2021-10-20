@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { routerHome } from './routes';
-import HomeTemplate from './screens/User';
-import Login from './screens/User/login/Login';
-import SignUp from './screens/User/sign-up/SignUp';
-import Checkout from './screens/User/checkout/Checkout';
+import HomeTemplate from './containers/User';
+import Login from './containers/User/login/Login';
+import SignUp from './containers/User/sign-up/SignUp';
+import Checkout from './containers/User/checkout/Checkout';
 
 const showMenuHome = (routes) => {
     if (routes && routes.length > 0) {

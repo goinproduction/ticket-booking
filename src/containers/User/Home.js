@@ -40,7 +40,7 @@ export default function Home(props) {
     return (
         <>
             <Carousel history={props.history}></Carousel>
-            <div ref={listMovie}>
+            <div ref={listMovie} className='container'>
                 <ListMovie></ListMovie>
             </div>
             <div ref={groupCinema}>

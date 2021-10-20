@@ -26,11 +26,11 @@ export default function App() {
             </p>
             <button className="">App miễn phí - Tải về ngay!</button>
             <p className="text-3">
-              TIX có hai phiên bản{" "}
+              TIX có hai phiên bản
               <a className="app-link" href="# ">
                 iOS
-              </a>{" "}
-              &{" "}
+              </a>
+              &amp;
               <a className="app-link" href="# ">
                 Android
               </a>
