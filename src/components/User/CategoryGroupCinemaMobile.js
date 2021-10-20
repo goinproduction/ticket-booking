@@ -37,16 +37,6 @@ function CategoryGroupCinemaMobile(props) {
         root: {
             position: 'relative',
             width: '100%',
-            // "&::after": {
-            //   content: '""',
-            //   position: "absolute",
-            //   top: 0,
-            //   left: "50%",
-            //   width: "calc(100% - 40px)",
-            //   transform: "translateX(-50%)",
-            //   borderBottom: "1px solid rgba(238, 238, 238)"
-            // },
-            // border: "1px solid rgba(0, 0, 0, .125)",
             boxShadow: 'none',
             '&:not(:last-child)': {
                 borderBottom: 0,
@@ -193,11 +183,6 @@ function CategoryGroupCinemaMobile(props) {
                         id={`group-cinema-header-${index}`}
                     >
                         <div className='group-cinema--mobile'>
-                            <img
-                                src={groupCinema.logo}
-                                style={{ height: '50px' }}
-                                alt='img'
-                            />
                             <span className='group-cinema-name'>
                                 {groupCinema.tenHeThongRap}
                             </span>

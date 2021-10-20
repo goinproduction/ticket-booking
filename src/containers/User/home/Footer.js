@@ -25,6 +25,7 @@ import fb from '../../../assets/img/facebook-logo.png';
 import android from '../../../assets/img/android-logo.png';
 import zion from '../../../assets/img/zion-logo.jpg';
 import bct from '../../../assets/img/bct.png';
+let href = '#';
 
 const Footer = () => {
     return (
@@ -54,22 +55,14 @@ const Footer = () => {
                         </div>
                         <div className='row mg'>
                             <div className='col-sm-12'>
-                                <a
-                                    href='https://www.cgv.vn/'
-                                    target='_blank'
-                                    title='CGV'
-                                >
+                                <a>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={cgv}
                                         alt='CGV'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.bhdstar.vn/'
-                                    target='_blank'
-                                    title='D'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={bhd}
@@ -77,9 +70,9 @@ const Footer = () => {
                                     />
                                 </a>
                                 <a
-                                    href='http://galaxycine.vn/'
+                                    href={href}
                                     target='_blank'
-                                    title='Galaxycine'
+                                    rel='noopener noreferrer'
                                 >
                                     <img
                                         className='footer__content-partner-logo'
@@ -87,22 +80,14 @@ const Footer = () => {
                                         alt='galaxycine'
                                     />
                                 </a>
-                                <a
-                                    href='http://cinestar.com.vn/'
-                                    target='_blank'
-                                    title='Cinestar'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={cinestar}
                                         alt='cinestar'
                                     />
                                 </a>
-                                <a
-                                    href='https://lottecinemavn.com/'
-                                    target='_blank'
-                                    title='Lotte'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={lotte}
@@ -113,55 +98,35 @@ const Footer = () => {
                         </div>
                         <div className='row mg'>
                             <div className='col-sm-12'>
-                                <a
-                                    href='https://www.megagscinemas.vn/'
-                                    target='_blank'
-                                    title='Megagscinemas'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={megaGS}
                                         alt='megagscinemas'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.betacinemas.vn/'
-                                    target='_blank'
-                                    title='Betacinemas'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={beta}
                                         alt='betacinemas'
                                     />
                                 </a>
-                                <a
-                                    href='http://ddcinema.vn/'
-                                    target='_blank'
-                                    title='DDC'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={ddc}
                                         alt='ddcinema'
                                     />
                                 </a>
-                                <a
-                                    href='https://touchcinema.com/'
-                                    target='_blank'
-                                    title
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={touch}
                                         alt='touchcinema'
                                     />
                                 </a>
-                                <a
-                                    href='https://cinemaxvn.com/'
-                                    target='_blank'
-                                    title='Cinemaxvn'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={cinemax}
@@ -172,55 +137,35 @@ const Footer = () => {
                         </div>
                         <div className='row mg'>
                             <div className='col-sm-12'>
-                                <a
-                                    href='http://starlight.vn/'
-                                    target='_blank'
-                                    title='Starlight'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={starlight}
                                         alt='starlight'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.dcine.vn/'
-                                    target='_blank'
-                                    title='Dcine'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={dcine}
                                         alt='dcine'
                                     />
                                 </a>
-                                <a
-                                    href='https://zalopay.vn/'
-                                    target='_blank'
-                                    title='Zalopay'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={zalo}
                                         alt='zalopay'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.payoo.vn/'
-                                    target='_blank'
-                                    title='Payoo'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={payoo}
                                         alt='payoo'
                                     />
                                 </a>
-                                <a
-                                    href='https://portal.vietcombank.com.vn/Pages/Home.aspx'
-                                    target='_blank'
-                                    title='VCB'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={vcb}
@@ -231,55 +176,35 @@ const Footer = () => {
                         </div>
                         <div className='row mg'>
                             <div className='col-sm-12'>
-                                <a
-                                    href='https://www.agribank.com.vn/'
-                                    target='_blank'
-                                    title='Agribank'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={agri}
                                         alt='agribank'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.vietinbank.vn/web/home/vn/index.html'
-                                    target='_blank'
-                                    title='Vietinbank'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={viettin}
                                         alt='vietinbank'
                                     />
                                 </a>
-                                <a
-                                    href='https://www.indovinabank.com.vn/'
-                                    target='_blank'
-                                    title='IVB'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={ivb}
                                         alt='IVB'
                                     />
                                 </a>
-                                <a
-                                    href='https://webv3.123go.vn/'
-                                    target='_blank'
-                                    title='123GO'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={go}
                                         alt='123go'
                                     />
                                 </a>
-                                <a
-                                    href='https://laban.vn/'
-                                    target='_blank'
-                                    title='Laban'
-                                >
+                                <a href={href}>
                                     <img
                                         className='footer__content-partner-logo'
                                         src={laban}
@@ -295,14 +220,14 @@ const Footer = () => {
                                 <div className='footer__content-apps'>
                                     <p>Mobile App</p>
                                     <div className='footer__content__apps-logo'>
-                                        <a href target='_black'>
+                                        <a href={href}>
                                             <img
                                                 src={apple}
                                                 alt='apple'
                                                 className='footer__content-apps-img'
                                             />
                                         </a>
-                                        <a href target='_black'>
+                                        <a href={href}>
                                             <img
                                                 src={android}
                                                 alt='android'
@@ -316,14 +241,14 @@ const Footer = () => {
                                 <div className='footer__content-apps'>
                                     <p>Social</p>
                                     <div className='footer__content__apps-logo'>
-                                        <a href target='_black'>
+                                        <a href={href}>
                                             <img
                                                 src={fb}
                                                 alt='facebook'
                                                 className='footer__content-apps-img'
                                             />
                                         </a>
-                                        <a href target='_black'>
+                                        <a href={href}>
                                             <img
                                                 src={zaloLogo}
                                                 alt='zalo'
@@ -359,7 +284,7 @@ const Footer = () => {
                                 Số Điện Thoại (Hotline): 0374586530 <br />
                                 Email:{' '}
                                 <a
-                                    href='mailto:itdev.126@gmail.com'
+                                    href={href}
                                     style={{
                                         color: '#FB4226',
                                         textDecoration: 'none',

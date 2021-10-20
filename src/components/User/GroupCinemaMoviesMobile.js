@@ -287,18 +287,11 @@ function GroupCinemaMoviesMobile(props) {
                         id='cinema-header'
                     >
                         <div className='cinema'>
-                            <div className='cinema__logo'>
-                                <img
-                                    className=''
-                                    src={`/img/${maHeThongRap}.jpg`}
-                                    alt='cinema-logo'
-                                />
-                            </div>
                             <div className='cinema__info'>
                                 <span className='cinema__name'>
                                     <span className='group-cinema__name'>
                                         {tenRap[0]}
-                                    </span>{' '}
+                                    </span>
                                     - {tenRap[1]}
                                 </span>
                                 <span className='cinema__address'>
