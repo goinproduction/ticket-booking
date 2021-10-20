@@ -1,5 +1,6 @@
 import React from 'react';
-
+import cancel from '../../../assets/img/cancel-arrow.png';
+import back from '../../../assets/img/back.png';
 export default function CheckoutStep1(props) {
     //Lọc loại ghế có trong danh sách ghế
     const typeSeat = [
@@ -63,7 +64,7 @@ export default function CheckoutStep1(props) {
                 <div key={key} className='ticket row m-0 align-items-center'>
                     <div className='ticket__type col-7 col-md-4 p-0'>
                         <span>
-                            Vé{' '}
+                            Vé
                             {numOfSeats[key].type === 'Thuong'
                                 ? 'Thường'
                                 : numOfSeats[key].type}
@@ -106,7 +107,7 @@ export default function CheckoutStep1(props) {
                 <div onClick={returnDetailMoviePage} className='backMobile'>
                     <img
                         className='img-fluid'
-                        src='/img/cancel-arrow.png'
+                        src={cancel}
                         alt='cancel-arrow'
                     />
                 </div>
@@ -140,7 +141,7 @@ export default function CheckoutStep1(props) {
                 >
                     <div className='checkout__left__overlay'>
                         <div className='back' onClick={returnDetailMoviePage}>
-                            <img src='/img/back.png' alt='back-arrow' />
+                            <img src={back} alt='back-arrow' />
                         </div>
                         <div className='detail-movie__info'>
                             <p className='ngay-chieu'>
@@ -163,12 +164,12 @@ export default function CheckoutStep1(props) {
                             <p className='cinema__name'>
                                 <span className='cinema__name__group'>
                                     {tenRap[0]}
-                                </span>{' '}
+                                </span>
                                 - {tenRap[1]}
                             </p>
                             <p className='cinema__time'>
-                                {props.chosenMovie.thongTinPhim.ngayChieu} -{' '}
-                                {props.chosenMovie.thongTinPhim.gioChieu} -{' '}
+                                {props.chosenMovie.thongTinPhim.ngayChieu} -
+                                {props.chosenMovie.thongTinPhim.gioChieu} -
                                 {props.chosenMovie.thongTinPhim.tenRap}
                             </p>
                         </div>
