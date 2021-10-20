@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
@@ -6,16 +6,16 @@ import Swal from 'sweetalert2';
 export default function CheckoutStep2(props) {
     let user = JSON.parse(localStorage.getItem('User'));
 
-    const [modalShow, setModalShow] = React.useState(false);
-    const [blankSeat, setBlankSeat] = React.useState(false);
-    const [timeOut, setTimeOut] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [blankSeat, setBlankSeat] = useState(false);
+    const [timeOut, setTimeOut] = useState(false);
 
-    const [blankSeatNoti, setBlankSeatNoti] = React.useState(
+    const [blankSeatNoti, setBlankSeatNoti] = useState(
         'Bạn không thể bỏ trống 1 ghế ở đầu mỗi dãy'
     );
-    const [step, setStep] = React.useState(1);
+    const [step, setStep] = useState(1);
 
-    const [ticket, setTicket] = React.useState({
+    const [ticket, setTicket] = useState({
         maLichChieu: props.chosenMovie.thongTinPhim.maLichChieu,
         danhSachVe: [],
         taiKhoanNguoiDung: user.taiKhoan,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -127,12 +127,12 @@ const ExpansionPanelDetails2 = withStyles((theme) => ({
 function GroupCinemaMoviesMobile(props) {
     const classes = useStyles();
     //Material UI Tabs Dates
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
     //Set Chosen Day
-    const [chosenDay, setChosenDay] = React.useState('2019-01-01');
+    const [chosenDay, setChosenDay] = useState('2019-01-01');
 
     //Material UI Expand - Controlled Accordion
-    const [expanded, setExpanded] = React.useState('');
+    const [expanded, setExpanded] = useState('');
     const handleChangeExpansion = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cancel from '../../../assets/img/cancel-arrow.png';
 import back from '../../../assets/img/back.png';
 export default function CheckoutStep1(props) {
@@ -29,7 +29,7 @@ export default function CheckoutStep1(props) {
         }
     });
 
-    const [numOfSeats, setNumOfSeats] = React.useState(initialSeat);
+    const [numOfSeats, setNumOfSeats] = useState(initialSeat);
 
     let totalCost = numOfSeats.reduce(
         (totalCost, seat) => totalCost + seat.price * seat.num,

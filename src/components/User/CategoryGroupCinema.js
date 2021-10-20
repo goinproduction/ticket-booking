@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import * as action from './../../services/redux/actions/cinemaActions';
 import Tab from '@material-ui/core/Tab';
@@ -21,7 +21,7 @@ function CategoryGroupCinema(props) {
     const classes = useStyles();
     let { listGroupCinema } = props;
     //Material UI Tabs
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
 
     //Render List Cinema & Cinema Movies of Groupcinema first time
     useEffect(() => {
