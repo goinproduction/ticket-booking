@@ -6,6 +6,7 @@ import HomeTemplate from './containers/User';
 import Login from './containers/User/login/Login';
 import SignUp from './containers/User/sign-up/SignUp';
 import Checkout from './containers/User/checkout/Checkout';
+import Dashboard from './containers/Admin/Dashboard';
 
 const showMenuHome = (routes) => {
     if (routes && routes.length > 0) {
@@ -31,6 +32,7 @@ function App() {
                 <Route path='/login' component={Login} />
                 <Route path='/sign-up' component={SignUp} />
                 <Route path='/checkout/:id' component={Checkout} />
+                <Route path='/dashboard' component={Dashboard}/>
             </Switch>
         </Router>
     );
