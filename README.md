@@ -1,5 +1,3 @@
-# All features has not been completed yet ^^
-
 </br>
 ## Run
 
